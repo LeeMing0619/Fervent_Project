@@ -21,22 +21,22 @@ class DrawerScreen extends Component {
           <View>
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('Home')}>
-                Home
+                Prayewall
               </Text>
             </View>
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('About')}>
-               About
+               Prayerdetails 
               </Text>
             </View>
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('Contact')}>
-              Contact
+              Userprofile 
               </Text>
             </View>
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('Settings')}>
-              Settings
+              PostPrayer 
               </Text>
             </View>
           </View>

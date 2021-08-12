@@ -23,6 +23,12 @@ import Settings from '../screens/Settings/index';
 const DrawerNavigator = createDrawerNavigator({
     Home:{
         screen: Home,
+    },
+    About:{
+        screen: About,
+    },
+    Contact:{
+        screen: Contact,
     }
 },{
     initialRouteName: 'Home',
