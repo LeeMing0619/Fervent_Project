@@ -199,8 +199,5 @@ export default styles = StyleSheet.create({
     watchTest: {
         color: '#ffbe76',
         fontSize: 20
-    },
-    test: {
-        borderWidth: 1,
-    }
+    },    
 });
