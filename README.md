@@ -1,8 +1,4 @@
-## React Native Social Media App
-
-A cross platform (iOS and Android) React Native news app. This example was put together for [React Native by Example](https://www.reactnativebyexample.com/). Get started learning & mastering React Native for free!
-
-![Reference Designs](./assets/reference.png)
+## React Native Fervent App
 
 ### Installation
 
