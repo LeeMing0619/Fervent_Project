@@ -13,22 +13,28 @@ import {
   Keyboard,
   TouchableOpacity,
   KeyboardAvoidingView,
-  CheckBox,
 } from 'react-native';
+
 import { StackActions } from '@react-navigation/routers';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
 import Loader from './Components/Loader';
 
+import CheckBox from './Components/CheckBox';
+
 const LoginScreen = ({navigation}) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errortext, setErrortext] = useState('');
-  const [isSelected, setSelection] = useState(false);
-
+  
   const passwordInputRef = createRef();
+  const [isSelected, setSelection] = useState(false);
+  
+  const handleCheckBox = () => {
+    setSelection(!isSelected);
+  }
 
   const handleSubmitPress = () => {
     setErrortext('');
@@ -143,13 +149,11 @@ const LoginScreen = ({navigation}) => {
             <View style={styles.SectionStyle}>
               <View style={styles.viewChk}>
                 <CheckBox
-                  tintColors={{ true: '#FFBE76', false: '#E6E6E6' }}
-                  value={isSelected}
-                  onValueChange={setSelection}
-                  style={styles.checkbox}
+                  selected={isSelected}
+                  onPress={handleCheckBox}
+                  text='Remember me'
                 />
               </View>
-              <Text style={styles.txtRememberMe}>Remember me</Text>
             </View>
             <TouchableOpacity
               style={styles.buttonStyle}
@@ -232,7 +236,7 @@ const styles = StyleSheet.create({
   viewChk: {
     width: 24,
     height: 22,
-    backgroundColor: "#E6E6E6"
+    //backgroundColor: "#E6E6E6"
     
   },
   checkbox: {
@@ -241,10 +245,5 @@ const styles = StyleSheet.create({
     transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }],
     marginLeft: -6
   },
-  txtRememberMe: {
-    fontFamily: "abeezee-regular",
-    color: "rgba(155,155,155,1)",
-    fontSize: 18,
-    marginLeft: 12
-  },
+  
 });

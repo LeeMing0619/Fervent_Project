@@ -13,13 +13,14 @@ import {
   Keyboard,
   TouchableOpacity,
   ScrollView,
-  CheckBox,
 } from 'react-native';
 
 import Icon from "react-native-vector-icons/FontAwesome";
 import SelectDropdown from 'react-native-select-dropdown';
 import { RadioButton } from 'react-native-paper';
+
 import Loader from './Components/Loader';
+import CheckBox from './Components/CheckBox';
 
 const RegisterScreen = (props) => {
   const [firstname, setFirstNameText] = useState('');
@@ -42,6 +43,10 @@ const RegisterScreen = (props) => {
   const firstnameInputRef = createRef();
   const lastnameInputRef = createRef();
   const emailInputRef = createRef();
+
+  const handleCheckBox = () => {
+    setSelection(!isSelected);
+  }
 
   const handleSubmitButton = () => {
     setErrortext('');
@@ -269,13 +274,11 @@ const RegisterScreen = (props) => {
           <View style={styles.SectionStyle}>
             <View style={styles.rectCheckBox}>
               <CheckBox
-                  tintColors={{ true: '#FFBE76', false: '#E6E6E6' }}
-                  value={isSelected}
-                  onValueChange={setSelection}
-                  style={styles.checkbox}
+                  selected={isSelected}
+                  onPress={handleCheckBox}
+                  text='Use your current location'
                 />
             </View>
-            <Text style={styles.txtLocation}>Use your current location</Text>
           </View>
           <TouchableOpacity
             style={styles.buttonStyle}
@@ -391,13 +394,7 @@ const styles = StyleSheet.create({
   rectCheckBox: {
     width: 24,
     height: 24,
-    backgroundColor: "#E6E6E6"
-  },
-  checkbox: {
-    width: 22,
-    height: 22,
-    transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }],
-    marginLeft: -7,
+    //backgroundColor: "#E6E6E6"
   },
   txtLocation: {
     fontFamily: "abeezee-regular",
