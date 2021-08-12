@@ -43,19 +43,3 @@
    ```bash
    npm run dev
    ```
-
-## Resources
-
-1. [Node.js Rest APIs example with Express, Sequelize & MySQL](https://bezkoder.com/node-js-express-sequelize-mysql/)
-
-2. [Node.js – JWT Authentication & Authorization with JSONWebToken example](https://bezkoder.com/node-js-jwt-authentication-mysql/)
-
-3. [In-depth Introduction to JWT-JSON Web Token](https://bezkoder.com/jwt-json-web-token/)
-
-4. [Sequelize Documentation](https://sequelize.org/master/)
-
-5. [Getting Started with Node, Express and Mysql Using Sequelize](https://medium.com/@prajramesh93/getting-started-with-node-express-and-mysql-using-sequelize-ed1225afc3e0)
-
-6. [Hidup Mudah dengan Sequelize: ORM Untuk Aplikasi NodeJS](https://refactory.id/post/91-hidup-mudah-dengan-sequelize-orm-untuk-aplikasi-nodejs)
-
-7. [Node.js Everywhere with Environment Variables!](https://medium.com/the-node-js-collection/making-your-node-js-work-everywhere-with-environment-variables-2da8cdf6e786)
