@@ -11,7 +11,7 @@ export default styles = StyleSheet.create({
         margin: 10,
     },
     menuItem:{
-        padding: 10,
+        padding: 20,
         borderWidth: 0.5,
         borderColor: '#d6d7da'
     },
@@ -48,6 +48,11 @@ export default styles = StyleSheet.create({
         marginLeft: 25,
         marginRight: 25,
     },
+    Section4Style: { 
+        flexDirection: 'row',
+        marginLeft: 15,
+        marginTop: 20
+    },
     txtTime: {
         color: "#121212",
         fontSize: 14
@@ -79,6 +84,10 @@ export default styles = StyleSheet.create({
     icon7: {
         color: "rgba(230, 220, 9,1)",
         marginLeft: 70,
+        fontSize: 30
+    },
+    icon8: {
+        color: "rgba(242, 130, 2,1)",
         fontSize: 30
     },
     locationText: {
@@ -186,5 +195,12 @@ export default styles = StyleSheet.create({
     prayer3: {
         textAlign: 'center',
         width: '33%'
+    },
+    watchTest: {
+        color: '#ffbe76',
+        fontSize: 20
+    },
+    test: {
+        borderWidth: 1,
     }
 });

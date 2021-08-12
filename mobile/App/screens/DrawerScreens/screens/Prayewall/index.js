@@ -35,7 +35,7 @@ const items = [
   { key: 15, time: '6:30 PM', postDate: 'Monday \n5 days ago', content: 'Please take a moment to send your urgent prayer request...', location: 'shenyang, Liaoning'},
 ];
 
-export default class Home extends Component{
+export default class Prayewall extends Component{
   render() {
     return (
       <View style={styles.container}>
@@ -48,7 +48,7 @@ export default class Home extends Component{
             return (
               <TouchableOpacity
               activeOpacity={0.5}
-              onPress={() => this.props.navigation.navigate('About')}>
+              onPress={() => this.props.navigation.navigate('DetailProye')}>
               <View key= { item.key } style={styles.SectionStyle}>
                 <EntypoIcon
                   name="dots-three-horizontal"

@@ -16,26 +16,26 @@ class DrawerScreen extends Component {
 
   render () {
     return (
-      <View>
+      <View style={styles.test}>
         <ScrollView>
           <View>
             <View style={styles.menuItem}>
-              <Text onPress={this.navigateToScreen('Home')}>
+              <Text onPress={this.navigateToScreen('Prayewall')}>
                 Prayewall
               </Text>
             </View>
-            <View style={styles.menuItem}>
+            {/* <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('About')}>
                Prayerdetails 
               </Text>
-            </View>
+            </View> */}
             <View style={styles.menuItem}>
-              <Text onPress={this.navigateToScreen('Contact')}>
+              <Text onPress={this.navigateToScreen('Profile')}>
               Userprofile 
               </Text>
             </View>
             <View style={styles.menuItem}>
-              <Text onPress={this.navigateToScreen('Settings')}>
+              <Text onPress={this.navigateToScreen('PostProye')}>
               PostPrayer 
               </Text>
             </View>

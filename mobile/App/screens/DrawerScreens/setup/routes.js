@@ -8,10 +8,10 @@ import styles from '../styles/index';
 
 import DrawerMenu from '../screens/DrawerMenu';
 import BottomTabNavigator from '../components/BottomTab';
-import Home from '../screens/Home/index';
-import About from '../screens/About/index';
-import Contact from '../screens/Contact/index';
-import Settings from '../screens/Settings/index';
+import Prayewall from '../screens/Prayewall/index';
+import Profile from '../screens/Profile/index';
+import PostProye from '../screens/PostProye/index';
+import DetailProye from '../screens/DetailProye';
 
 // const Tabs = BottomTabNavigator({
 //     Home: Home,
@@ -21,19 +21,33 @@ import Settings from '../screens/Settings/index';
 // })
 
 const DrawerNavigator = createDrawerNavigator({
-    Home:{
-        screen: Home,
+    Prayewall:{
+        screen: Prayewall,
     },
-    About:{
-        screen: About,
+    Profile:{
+        screen: Profile,
     },
-    Contact:{
-        screen: Contact,
+    PostProye:{ 
+        screen: PostProye,
+    },
+    DetailProye: {
+        screen: DetailProye,
     }
 },{
-    initialRouteName: 'Home',
+    initialRouteName: 'Prayewall',
     contentComponent: DrawerMenu,
-    drawerWidth: 300
+    
+    contentOptions: {
+        // add your styling here 
+        activeTintColor: '#e91e63',
+        itemsContainerStyle: {
+            marginVertical: 0,
+        },
+        iconContainerStyle: {
+            opacity: 1,
+        },
+    },
+ // drawerBackgroundColor: '#262A2C',
 });
 
 const MenuImage = ({navigation}) => navigation.state.isDrawerOpen ?
@@ -52,16 +66,16 @@ const defaultNavigationOptions = ({ navigation }) => ({
           <MenuImage navigation={navigation}/>
       </TouchableOpacity>,
   headerRight:
-        <TouchableOpacity style={styles.menuRightButton} onPress={() => {navigation.dispatch(DrawerActions.toggleDrawer())} }>
+        <TouchableOpacity style={styles.menuRightButton} onPress={() => {navigation.navigate('DetailProye')} }>
             <MenuRightImage navigation={navigation}/>
-        </TouchableOpacity>,
+        </TouchableOpacity>,   
 })
 
 const StackNavigator = createStackNavigator({
     DrawerNavigator:{
         screen: DrawerNavigator
     }
-},{ defaultNavigationOptions });
+},{ defaultNavigationOptions  });
 
 let Navigation = createAppContainer(StackNavigator);
 

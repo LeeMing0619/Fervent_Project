@@ -22,7 +22,7 @@ const items = [
   { key: 1, time: '6:30 PM', postDate: 'Monday \n5 days ago', content: 'Please take a moment to send your urgent prayer request...', location: 'shenyang, Liaoning'},
 ];
 
-export default class Contact extends Component{
+export default class Profile extends Component{
   render() {
     return (      
       <View style={styles.container}>
@@ -77,7 +77,7 @@ export default class Contact extends Component{
                     style={styles.button40Style}
                     activeOpacity={0.5}
                     onPress={() => this.props.navigation.navigate('Contact')}>
-                      <Text style={styles.buttonText40Style}>Prayer Ansered</Text>
+                      <Text style={styles.buttonText40Style}>Prayer Answered</Text>
                   </TouchableOpacity>            
                   <Text style={styles.people2Count}> +3 People Praying</Text>
                 </View>

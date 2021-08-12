@@ -19,7 +19,7 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 const items = [
   { key: 1, time: '6:30 PM', postDate: 'Monday \n5 days ago', content: 'Please take a moment to send your urgent prayer request...', location: 'shenyang, Liaoning'},
 ];
-export default class About extends Component{
+export default class DetailProye extends Component{
   render() {
     return (
       <View style={styles.container}>
