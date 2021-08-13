@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     height: 250,
   },
   registerTextStyle: {
-    fontFamily: "abeezee-regular",
+    //fontFamily: "abeezee-regular",
     color: '#ffbe76',
     textAlign: 'center',
     fontWeight: 'bold',
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   buttonTextStyle: {
-    fontFamily: "abeezee-regular",
+    //fontFamily: "abeezee-regular",
     color: '#FFFFFF',
     paddingVertical: 10,
     fontWeight: 'bold',

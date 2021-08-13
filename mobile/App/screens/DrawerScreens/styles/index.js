@@ -136,13 +136,13 @@ export default styles = StyleSheet.create({
         marginBottom: 25,
     },
     buttonText40Style: {
-        fontFamily: "abeezee-regular",
+        //fontFamily: "abeezee-regular",
         color: '#FFFFFF',
         paddingVertical: 8,
         fontSize: 16,
     },
     buttonTextStyle: {
-        fontFamily: "abeezee-regular",
+        //fontFamily: "abeezee-regular",
         color: '#FFFFFF',
         paddingVertical: 11,
         fontSize: 20,
@@ -191,7 +191,7 @@ export default styles = StyleSheet.create({
     prayer2: {
         textAlign: 'center',
         width: '33%'
-    },
+    }, 
     prayer3: {
         textAlign: 'center',
         width: '33%'

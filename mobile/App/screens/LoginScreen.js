@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     marginBottom: 25,
   },
   buttonTextStyle: {
-    fontFamily: "abeezee-regular",
+    //fontFamily: "abeezee-regular",
     color: '#FFFFFF',
     paddingVertical: 11,
     fontSize: 20,
@@ -211,7 +211,7 @@ const styles = StyleSheet.create({
   inputStyle: {
     flex: 1,
     color: 'black',
-    fontFamily: "abeezee-regular",
+    //fontFamily: "abeezee-regular",
     fontSize: 16,
     paddingLeft: 15,
     paddingRight: 15,
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     borderColor: '#dadae8',
   },
   registerTextStyle: {
-    fontFamily: "abeezee-regular",
+    //fontFamily: "abeezee-regular",
     color: '#ffbe76',
     textAlign: 'center',
     fontWeight: 'bold',

@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
   inputStyle: {
     flex: 1,
     color: 'black',
-    fontFamily: "abeezee-regular",
+    //fontFamily: "abeezee-regular",
     fontSize: 16,
     paddingLeft: 15,
     paddingRight: 15,
@@ -377,7 +377,7 @@ const styles = StyleSheet.create({
     color: "#444",
   },
   iAmABeliever: {
-    fontFamily: "abeezee-regular",
+    //fontFamily: "abeezee-regular",
     color: "rgba(155,155,155,1)",
     fontSize: 15,
     marginLeft: 5,
@@ -385,7 +385,7 @@ const styles = StyleSheet.create({
     marginTop: 7
   }, 
   noneBeliever: {
-    fontFamily: "abeezee-regular",
+    //fontFamily: "abeezee-regular",
     color: "rgba(155,155,155,1)",
     fontSize: 15,
     marginLeft: 5,
@@ -397,7 +397,7 @@ const styles = StyleSheet.create({
     //backgroundColor: "#E6E6E6"
   },
   txtLocation: {
-    fontFamily: "abeezee-regular",
+    //fontFamily: "abeezee-regular",
     color: "rgba(155,155,155,1)",
     fontSize: 18,
     marginLeft: 17,
