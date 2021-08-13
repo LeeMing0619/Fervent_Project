@@ -17,7 +17,7 @@ import {
 
 import Icon from "react-native-vector-icons/FontAwesome";
 import SelectDropdown from 'react-native-select-dropdown';
-import { RadioButton } from 'react-native-paper';
+import RadioButton from 'react-native-radio-button';
 
 import Loader from './Components/Loader';
 import CheckBox from './Components/CheckBox';
@@ -26,7 +26,7 @@ const RegisterScreen = (props) => {
   const [firstname, setFirstNameText] = useState('');
   const [lastname, setLastNameText] = useState('');
   const [email, setEmailText] = useState('');
-  const [checked, setChecked] = useState('1');
+  const [checked, setChecked] = useState(1);
 
   const [password, setPasswordText] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -220,22 +220,21 @@ const RegisterScreen = (props) => {
             {/* <TextInput placeholder="Gender" style={styles.textInput5}></TextInput>
             <Icon name="chevron-down" style={styles.icon}/> */}
           </View>
-          <View style={styles.SectionStyle}>        
+          <View style={styles.Section1Style}>        
             <RadioButton
-              color="#FFBE76"
-              uncheckedColor="#E6E6E6"
-              value="1"
-              status={ checked === '1' ? 'checked' : 'unchecked' }
-              onPress={() => setChecked('1')}
+              animation={'bounceIn'}
+              isSelected={ checked === 1 ? true: false}
+              innerColor={ checked === 1 ? "#FFBE76": "E6E6E6"}
+              outerColor={ checked === 1 ? "#FFBE76": "E6E6E6"}
+              onPress={() => setChecked(1)}
             />     
             <Text style={styles.iAmABeliever}>I am a believer</Text>        
             <RadioButton
-              theme="borderWidth"
-              color="#FFBE76"
-              uncheckedColor="#E6E6E6"
-              value="0"
-              status={ checked === '0' ? 'checked' : 'unchecked' }
-              onPress={() => setChecked('0')}
+              animation={'bounceIn'}
+              isSelected={ checked === 0 ? true: false}
+              innerColor={ checked === 0 ? "#FFBE76": "E6E6E6"}
+              outerColor={ checked === 0 ? "#FFBE76": "E6E6E6"}         
+              onPress={() => setChecked(0)}
             />
             <Text style={styles.noneBeliever}>None believer</Text>
           </View>
@@ -305,6 +304,13 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 35,
     marginRight: 35,
+  },
+  Section1Style: {
+    flexDirection: 'row',
+    height: 40,
+    marginTop: 10,
+    marginLeft: 40,
+    marginRight: 40,
   },
   buttonStyle: {
     backgroundColor: '#ffbe76',
@@ -393,7 +399,7 @@ const styles = StyleSheet.create({
   },
   rectCheckBox: {
     width: 24,
-    height: 24,
+    height: 28,
     //backgroundColor: "#E6E6E6"
   },
   txtLocation: {

@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   },
   fervent: {
     textAlign: "center",
-    fontFamily: "roboto-700",
+    fontFamily: "roboto-regular",
     color: "#121212",
     fontSize: 30,
     fontWeight: 'bold',

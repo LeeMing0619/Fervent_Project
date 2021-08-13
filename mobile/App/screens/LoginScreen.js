@@ -235,15 +235,8 @@ const styles = StyleSheet.create({
   },
   viewChk: {
     width: 24,
-    height: 22,
+    height: 28,
     //backgroundColor: "#E6E6E6"
-    
-  },
-  checkbox: {
-    width: 22,
-    height: 22,
-    transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }],
-    marginLeft: -6
   },
   
 });

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         width: 300
     },
     txtRememberMe: {
-        fontFamily: "abeezee-regular",
+        //fontFamily: "abeezee-regular",
         color: "rgba(155,155,155,1)",
         fontSize: 18,
         marginLeft: 12
