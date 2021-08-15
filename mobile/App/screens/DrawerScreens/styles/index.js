@@ -11,8 +11,11 @@ export default styles = StyleSheet.create({
         margin: 10,
     },
     menuItem:{
-        padding: 20,
-        borderWidth: 0.5,
+        flexDirection: 'row',
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingTop: 10,
+        paddingBottom: 10,
         borderColor: '#d6d7da'
     },
     menuButton:{
@@ -21,9 +24,28 @@ export default styles = StyleSheet.create({
     menuRightButton: {
         paddingRight: 15,
     },
+    menuItemHeader: {
+        marginTop: 10,
+        marginLeft: 20,
+        paddingBottom: 15,
+        marginRight: 20,
+        marginBottom: 10,
+        borderBottomWidth: 0.2,
+    },
+    menuItemHeaderSetting: {
+        marginTop: 30,
+        marginLeft: 20,
+        paddingBottom: 15,
+        marginRight: 20,
+        marginBottom: 8,
+        borderBottomWidth: 0.2,
+    },
     headerStyle:{
-        textAlign: 'center',
-        backgroundColor: '#ffbe76'
+        //textAlign: 'center',
+        backgroundColor: '#ffbe76',
+        //backgroundColor: 'transparent',
+        elevation: 0,
+        shadowOpacity: 0,
     },
     headerTitleStyle: {       
         left: -5 , 
@@ -149,6 +171,13 @@ export default styles = StyleSheet.create({
     },
     containerHeader: {        
         height: 300,
+        backgroundColor: "rgba(255,190,118,1)",
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignContent: 'center',
+    },
+    containerHeader2: {        
+        height: 250,
         backgroundColor: "rgba(255,190,118,1)",
         flexDirection: 'row',
         justifyContent: 'center',

@@ -34,19 +34,22 @@ const DrawerNavigator = createDrawerNavigator({
         screen: DetailProye,
     }
 },{
-    initialRouteName: 'Prayewall',
-    contentComponent: DrawerMenu,
     
-    contentOptions: {
-        // add your styling here 
-        activeTintColor: '#e91e63',
-        itemsContainerStyle: {
-            marginVertical: 0,
-        },
-        iconContainerStyle: {
-            opacity: 1,
-        },
-    },
+    
+    initialRouteName: 'Prayewall',
+    contentComponent: DrawerMenu,    
+    drawerWidth: '75%',
+    drawerType:'front',
+    // contentOptions: {
+    //     // add your styling here 
+    //     activeTintColor: '#e91e63',
+    //     itemsContainerStyle: {
+    //         marginVertical: 0,
+    //     },
+    //     iconContainerStyle: {
+    //         opacity: 1,
+    //     },
+    // },
  // drawerBackgroundColor: '#262A2C',
 });
 
@@ -68,7 +71,8 @@ const defaultNavigationOptions = ({ navigation }) => ({
   headerRight:
         <TouchableOpacity style={styles.menuRightButton} onPress={() => {navigation.navigate('DetailProye')} }>
             <MenuRightImage navigation={navigation}/>
-        </TouchableOpacity>,   
+        </TouchableOpacity>, 
+        
 })
 
 const StackNavigator = createStackNavigator({

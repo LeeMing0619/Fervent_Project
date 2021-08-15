@@ -12,7 +12,10 @@ module.exports = (sequelize, Sequelize, DataTypes) => {
       title: {
         type: DataTypes.STRING
       },
-      author: {
+      user_id: {
+        type: DataTypes.UUID
+      },
+      content: {
         type: DataTypes.STRING
       },
       published: {
