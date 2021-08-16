@@ -8,7 +8,7 @@ const CheckBox = ({ selected, onPress, style, textStyle, size = 30, color = '#ff
     <TouchableOpacity style={styles.checkBox} onPress={onPress} {...props}>
         <Icon
             size={size}
-            color={color}
+            color={selected ? color : '#E6E6E6'}
             name={ selected ? 'check-box' : 'check-box-outline-blank'}
         />
 
@@ -16,7 +16,7 @@ const CheckBox = ({ selected, onPress, style, textStyle, size = 30, color = '#ff
     </TouchableOpacity>
 )
 
-export default CheckBox
+export default CheckBox 
 
 const styles = StyleSheet.create({
     checkBox: {
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     txtRememberMe: {
         //fontFamily: "abeezee-regular",
         color: "rgba(155,155,155,1)",
-        fontSize: 18,
-        marginLeft: 12
+        fontSize: 16.5,
+        marginLeft: 10
       },
 })

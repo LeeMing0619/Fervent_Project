@@ -3,7 +3,7 @@
 
 // Import React and Component
 import React, {useState, useEffect} from 'react';
-import {ActivityIndicator, View, StyleSheet, Image} from 'react-native';
+import {ActivityIndicator, View, StyleSheet, Image, Text} from 'react-native';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -25,9 +25,10 @@ const SplashScreen = ({navigation}) => {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.welcome}> Welcome</Text>      
       <Image
-        source={require('../assets/image/aboutreact.png')}
-        style={{width: '90%', resizeMode: 'contain', margin: 30}}
+        source={require('../assets/image/aboutreact.gif')}
+        style={{width: '60%',  height: '30%' ,resizeMode: 'contain'}}
       />
       <ActivityIndicator
         animating={animating}
@@ -52,4 +53,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 80,
   },
+  welcome: {
+    fontFamily: "roboto-700",
+    color: "#121212",
+    fontSize: 40,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  }
 });

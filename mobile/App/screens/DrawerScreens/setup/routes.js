@@ -4,6 +4,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator, DrawerActions } from 'react-navigation-drawer';
 import { Badge } from 'react-native-elements';
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 import SvgUri from 'react-native-svg-uri';
 import styles from '../styles/index';
@@ -72,7 +73,7 @@ const defaultNavigationOptions = ({ navigation }) => ({
   headerRight:
         <TouchableOpacity style={styles.menuRightButton} onPress={() => {navigation.navigate('DetailProye')} }>
             <MenuRightImage navigation={navigation}/>
-            <Badge value='8' textStyle={{color: 'white'}} badgeStyle={{backgroundColor: 'red'}} containerStyle={{ backgroundColor: 'transparent', position: 'absolute', top: -4, right: 10 }} />
+            <Badge value='8' textStyle={{color: 'white'}} badgeStyle={{backgroundColor: 'red'}} containerStyle={{ backgroundColor: 'transparent', position: 'absolute', top: -4, right: 1 }} />
         </TouchableOpacity>, 
         
 })

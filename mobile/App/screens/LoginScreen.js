@@ -102,14 +102,14 @@ const LoginScreen = ({navigation}) => {
           <KeyboardAvoidingView enabled>
             <View style={{alignItems: 'center'}}>
               <Image
-                source={require('../assets/image/aboutreact.png')}
+                source={require('../assets/image/login.png')}
                 style={{
                   width: '50%',
                   height: 100,
                   resizeMode: 'contain',
                   margin: 30,
                 }}
-              />
+              />              
             </View>
             <View style={styles.SectionStyle}>
               <TextInput
@@ -166,6 +166,11 @@ const LoginScreen = ({navigation}) => {
               onPress={() => navigation.navigate('RegisterScreen')}>
               Register Now
             </Text>
+            <Text
+              style={styles.registerTextStyle}
+              onPress={() => navigation.navigate('AboutScreen')}>
+              About us
+            </Text>
           </KeyboardAvoidingView>
         </View>
       </ScrollView>
@@ -190,10 +195,10 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonStyle: {
-    backgroundColor: '#ffbe76',
+    backgroundColor: 'rgba(26,188,156,1)',
     borderWidth: 0,
     color: '#FFFFFF',
-    borderColor: '#7DE24E',
+    borderColor: 'rgba(26,188,156,1)',
     height: 50,
     alignItems: 'center',
     borderRadius: 8,
@@ -223,7 +228,7 @@ const styles = StyleSheet.create({
     //fontFamily: "abeezee-regular",
     color: '#ffbe76',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontWeight: '300',
     fontSize: 20,
     alignSelf: 'center',
     padding: 10,

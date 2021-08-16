@@ -14,12 +14,9 @@ import {
   TouchableOpacity
 } from 'react-native';
 import styles from '../../styles/index';
+import Icon from "react-native-vector-icons/FontAwesome";
+import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
-
-const items = [
-  { key: 1, time: '6:30 PM', postDate: 'Monday \n5 days ago', content: 'Please take a moment to send your urgent prayer request...', location: 'shenyang, Liaoning'},
-];
-
 
 export default class DetailProye extends Component{
   constructor(props) {
@@ -73,52 +70,53 @@ export default class DetailProye extends Component{
 
     return (
       <View style={styles.container}>
+        <View style={styles.Section2Style}>
+          <Icon
+            name="user-circle-o"
+            style={styles.icon10}
+          ></Icon>
+          <MaterialCommunityIconsIcon
+            name="chess-king"
+            style={styles.icon11}
+          ></MaterialCommunityIconsIcon>
+          <Text style={styles.gerardM}>Gerard, M</Text>
+          <Text style={styles.christian}>Christian</Text>
+        </View>
         <ScrollView  contentContainerStyle={{
           justifyContent: 'center',
           alignContent: 'center',
           marginTop: 20,
-        }}>
-          {/* { paywalls.map( item => {
-            let date = new Date(item.created_at);
-            let time = date.getHours() + ":" + date.getMinutes();
-            let offsetDate = new Date().getDate() - date.getDate();
-            let postDate = days[date.getDay()];
-            return (               */}
-              <View key= { paywalls.id } style={styles.SectionStyle}>
-                <EntypoIcon
-                  name="dots-three-horizontal"
-                  style={styles.icon4}
-                ></EntypoIcon>
-                <View style={styles.Section2Style}>
-                  <Text style={styles.txtTime}> { time } </Text>
-                  <View style={styles.postDateView}>                    
-                    <Text style={styles.txtPostDate}> { postDate } </Text>
-                    <Text style={styles.txtPostDate}> { offsetDate } days ago </Text>
-                  </View>                  
-                </View>
-                <View style={styles.Section2Style}>                
-                  <Text style={styles.contentText}>{ paywalls.content } </Text>
-                </View>
-                <View style={styles.Section3Style}>  
-                  <EntypoIcon
-                    name="location"
-                    style={styles.icon5}
-                  ></EntypoIcon>              
-                  <Text style={styles.locationText}>Lynn, MA, USA</Text>
-                </View>  
-                <View style={styles.Section2Style}>                
-                  <Text style={styles.peopleCount}> +3 People Praying</Text>
-                </View>                                
-                <TouchableOpacity
-                  style={styles.buttonStyle}
-                  activeOpacity={0.5}
-                  onPress={() => this.props.navigation.navigate('Contact')}>
-                    <Text style={styles.buttonTextStyle}>I will pray for you</Text>
-                </TouchableOpacity>
-              </View>
-            {/* )
-          })} */}
+        }}>         
+          <View key= { paywalls.id } style={styles.SectionStyle}>
+            <EntypoIcon
+              name="dots-three-horizontal"
+              style={styles.icon4}
+            ></EntypoIcon>
+            <View style={styles.Section2Style}>
+              <View
+                style={styles.viewDayStyle}
+                activeOpacity={0.5}
+                onPress={this.handleInProgressButton}>
+                <Text style={styles.txtPostDate}>{ offsetDate } days ago</Text>
+              </View>                 
+            </View>
+            <View style={styles.Section2Style}>                
+              <Text style={styles.contentText}>{ paywalls.content } </Text>
+            </View>
+            <View style={styles.Section2Style}>
+              <Icon name="user-circle-o" style={styles.icon9}></Icon>
+              <Icon name="user-circle-o" style={styles.icon9}></Icon>
+              <Icon name="user-circle-o" style={styles.icon9}></Icon>
+              <Text style={styles.peopleCount1}> +55 Praying</Text>
+            </View> 
+          </View>
         </ScrollView>
+        <TouchableOpacity
+          style={styles.buttonStyle}
+          activeOpacity={0.5}
+          onPress={() => this.props.navigation.navigate('Contact')}>
+            <Text style={styles.buttonTextStyle}>I will pray for you</Text>
+        </TouchableOpacity>
       </View>
     );
   }

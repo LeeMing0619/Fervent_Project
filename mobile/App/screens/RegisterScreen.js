@@ -130,14 +130,15 @@ const RegisterScreen = (props) => {
         }}>
         <View style={{alignItems: 'center'}}>
           <Image
-            source={require('../assets/image/aboutreact.png')}
+            source={require('../assets/image/register.png')}
             style={{
               width: '50%',
-              height: 100,
+              height: 80,
               resizeMode: 'contain',
-              margin: 30,
+              marginTop: 30,
+              marginBottom: 10,
             }}
-          />
+          />          
         </View>
         <KeyboardAvoidingView enabled>
           <View style={styles.SectionStyle}>
@@ -224,16 +225,16 @@ const RegisterScreen = (props) => {
             <RadioButton
               animation={'bounceIn'}
               isSelected={ checked === 1 ? true: false}
-              innerColor={ checked === 1 ? "#FFBE76": "E6E6E6"}
-              outerColor={ checked === 1 ? "#FFBE76": "E6E6E6"}
+              innerColor={ checked === 1 ? "#FFBE76": "#E6E6E6"}
+              outerColor={ checked === 1 ? "#FFBE76": "#E6E6E6"}
               onPress={() => setChecked(1)}
             />     
             <Text style={styles.iAmABeliever}>I am a believer</Text>        
             <RadioButton
               animation={'bounceIn'}
-              isSelected={ checked === 0 ? true: false}
-              innerColor={ checked === 0 ? "#FFBE76": "E6E6E6"}
-              outerColor={ checked === 0 ? "#FFBE76": "E6E6E6"}         
+              isSelected={ checked === 0 ? true : false}
+              innerColor={ checked === 0 ? "#FFBE76": "#E6E6E6"}
+              outerColor={ checked === 0 ? "#FFBE76": "#E6E6E6"}         
               onPress={() => setChecked(0)}
             />
             <Text style={styles.noneBeliever}>None believer</Text>
@@ -275,7 +276,9 @@ const RegisterScreen = (props) => {
               <CheckBox
                   selected={isSelected}
                   onPress={handleCheckBox}
-                  text='Use your current location'
+                  textStyle={{fontSize: 10}}
+                  text="By checking this box you're allowing
+                        us to always use your current location."
                 />
             </View>
           </View>
@@ -283,7 +286,7 @@ const RegisterScreen = (props) => {
             style={styles.buttonStyle}
             activeOpacity={0.5}
             onPress={handleSubmitButton}>
-            <Text style={styles.buttonTextStyle}>REGISTER</Text>
+            <Text style={styles.buttonTextStyle}>Register Now</Text>
           </TouchableOpacity>
           {/* <Text
               style={styles.registerTextStyle}
@@ -313,22 +316,23 @@ const styles = StyleSheet.create({
     marginRight: 40,
   },
   buttonStyle: {
-    backgroundColor: '#ffbe76',
+    backgroundColor: 'rgba(26,188,156,1)',
     borderWidth: 0,
     color: '#FFFFFF',
-    borderColor: '#ffbe76',
-    height: 40,
+    borderColor: 'rgba(26,188,156,1)',
+    height: 50,
     alignItems: 'center',
     borderRadius: 8,
     marginLeft: 35,
     marginRight: 35,
-    marginTop: 20,
+    marginTop: 40,
     marginBottom: 20,
   },
   buttonTextStyle: {
     color: '#FFFFFF',
     paddingVertical: 10,
-    fontSize: 16,
+    fontSize: 20,
+    fontWeight: "bold",
   },
   inputStyle: {
     flex: 1,
@@ -398,8 +402,7 @@ const styles = StyleSheet.create({
     marginTop: 7
   },
   rectCheckBox: {
-    width: 24,
-    height: 28,
+    height: 50,
     //backgroundColor: "#E6E6E6"
   },
   txtLocation: {
