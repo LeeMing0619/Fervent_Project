@@ -1,5 +1,5 @@
 ## React Native Fervent App
-[IMAGE](https://github.com/atulmy/atulmy.github.io/blob/master/images/crate/desktop-all-with-link.png)
+<img style="display: flex; align-items: flex-start;" src="/assets/reference.png"/>
 ### Installation
 
 > **Note:** Be sure you have the React Native CLI [installed on your system](https://facebook.github.io/react-native/docs/getting-started).
