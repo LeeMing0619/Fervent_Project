@@ -80,8 +80,8 @@ export default styles = StyleSheet.create({
         fontSize: 14
     },
     postDateView: {
-        width: '88%',
-        flexDirection: 'row', justifyContent: 'flex-end'
+        marginLeft: '64%',
+        flexDirection: 'column',
     },
     txtPostDate: {     
         width: 100,

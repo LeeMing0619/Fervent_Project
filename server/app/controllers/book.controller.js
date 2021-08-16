@@ -42,6 +42,7 @@ exports.findAll = (req, res) => {
     })
     .catch(err => {
       res.send(500).send({
+        status: 0,
         message: err.message || "Some error accurred while retrieving books."
       });
     });

@@ -66,9 +66,9 @@ const defaultNavigationOptions = ({ navigation }) => ({
   headerStyle: styles.headerStyle,
   headerTitleStyle: styles.headerTitleStyle,
   headerLeft:
-      <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.dispatch(DrawerActions.toggleDrawer())} }>
-          <MenuImage navigation={navigation}/>
-      </TouchableOpacity>,
+        <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.dispatch(DrawerActions.toggleDrawer())} }>
+            <MenuImage navigation={navigation}/>
+        </TouchableOpacity>,
   headerRight:
         <TouchableOpacity style={styles.menuRightButton} onPress={() => {navigation.navigate('DetailProye')} }>
             <MenuRightImage navigation={navigation}/>
