@@ -47,6 +47,7 @@ class DrawerScreen extends Component {
            justifyContent: 'center',
            alignContent: 'center',
            marginTop: 20,
+           marginLeft: 10
          }}>
            <View>
             <ScrollView>

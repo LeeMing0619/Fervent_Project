@@ -12,7 +12,7 @@ export default styles = StyleSheet.create({
     },
     menuItem:{
         flexDirection: 'row',
-        paddingLeft: 20,
+        paddingLeft: 40,
         paddingRight: 20,
         paddingTop: 10,
         paddingBottom: 10,
