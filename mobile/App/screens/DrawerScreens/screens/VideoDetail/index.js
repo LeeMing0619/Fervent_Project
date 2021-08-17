@@ -1,3 +1,9 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
  import React, { Component } from 'react';
  import {
     Text, 
@@ -5,7 +11,8 @@
     Dimensions, 
     SafeAreaView, 
     TouchableHighlight, 
-    Image,
+    Image, 
+    Linking,
     ScrollView
  } from 'react-native';
 
@@ -13,8 +20,11 @@
  import Icon from "react-native-vector-icons/MaterialCommunityIcons";
  import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
  import Carousel, { Pagination } from 'react-native-snap-carousel';
+ import VideoPlayer from 'react-native-video-player';
  
- export default class Videos extends Component{
+ import styles from '../../styles/index';
+
+ export default class VideoDetail extends Component{
     state = {
         data: [
             { title: 'a', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
@@ -25,34 +35,11 @@
         ],
         activeSlide: 0,
     }
-
-    _renderItemTrending = ({ item, index }) => {
-        return (
-            <TouchableHighlight
-                onPress={() => this.props.navigation.navigate('VideoDetail')}
-            >
-                <View style={{flexDirection: 'column'}} key={index}>
-                    <Image source={{uri: item.url}} style={{ width: '100%', height: '100%' }} />
-                    <Icon name="play" style={{ color: 'rgba(128,128,128,1)',fontSize: 80, top: '38%', left: '38%', position: 'absolute'}}></Icon>
-                    <FontAwesomeIcon
-                        style={{ color: 'rgba(128,128,128,1)',fontSize: 40, top: '80%', left: '8%', position: 'absolute'}}
-                        name="user-circle-o"
-                    ></FontAwesomeIcon>
-                    <Text style={{ color: 'rgba(0,0,0,1)',fontSize: 18, top: '80%', left: '22%', position: 'absolute'}}>Gerard, M</Text>
-                    <Text style={{ color: 'rgba(0,0,0,1)',fontSize: 14, top: '86%', left: '22%', position: 'absolute'}}>Christian</Text>
-                    <MaterialCommunityIconsIcon
-                        name="chess-king"
-                        style={{ color: 'rgba(241,196,15,1)',fontSize: 20, top: '77%', left: '16%', position: 'absolute'}}
-                    ></MaterialCommunityIconsIcon>                    
-                </View>
-            </TouchableHighlight>
-        );
-    }
-
+    
     _renderItemPopular = ({ item, index }) => {
         return (
             <TouchableHighlight
-                onPress={() => this.props.navigation.navigate('VideoDetail')}
+                onPress={() => Linking.openURL(item.url)}
             >
                 <View style={{flexDirection: 'column'}} key={index}>
                     <Image source={{uri: item.url}} style={{ width: '100%', height: '100%' }} />
@@ -68,36 +55,41 @@
             <ScrollView  contentContainerStyle={{
                 justifyContent: 'center',
                 alignContent: 'center',
-                marginBottom: 20,
+                marginBottom: 0,
             }}>
-                <View style={{marginTop: 10}}>
-                    <Text 
-                        style={{marginBottom: 10, marginLeft: 15, fontSize: 22, fontWeight: 'bold'}}>
-                        #Trending
-                    </Text>
-                    <SafeAreaView style={{ height: 300 }}>
-                        <Carousel
-                            data={this.state.data}
-                            renderItem={this._renderItemTrending}
-                            itemWidth={Dimensions.get("window").width * 0.8}
-                            sliderWidth={Dimensions.get("window").width * 1.0}
-                            slideStyle={{ flex: 1 }}
-                            inactiveSlideScale={0.97}
-                            useScrollView={true}
-                            //containerCustomStyle={{ flex: 1, backgroundColor: "#eee" }}
-                            onSnapToItem={index => this.setState({ activeSlide: index })} //for pagination
-                            loop
-                            autoplay
-                        />
-                        {/* <Pagination
-                            dotsLength={this.state.data.length} //dotの数
-                            activeDotIndex={this.state.activeSlide} //どのdotをactiveにするか
-                            containerStyle={{paddingVertical:15}} //デフォルトではちと広い
-                        /> */}
-                    </SafeAreaView>
+                <View style={{marginTop: 10}}>                    
+                    <VideoPlayer
+                        video={{ uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' }}
+                        videoWidth={Dimensions.get("window").width * 1.0}
+                        videoHeight={300}      
+                        controls={true}                  
+                        fullscreen={true}
+                        thumbnail={{ uri: 'https://i.picsum.photos/id/866/1600/900.jpg' }}
+                    />
+                    <View style={styles.Section2Style}>
+                        <FontAwesomeIcon
+                            name="user-circle-o"
+                            style={styles.icon10}
+                        ></FontAwesomeIcon>
+                        <MaterialCommunityIconsIcon
+                            name="chess-king"
+                            style={styles.icon11}
+                        ></MaterialCommunityIconsIcon>
+                        <Text style={styles.gerardM}>Gerard, M</Text>
+                        <Text style={styles.christian}>Christian</Text>
+                    </View>
+                    <View style={styles.Section2Style}>
+                        <Text style={styles.contentText}>On the first shot, you see a Projects screen that contains </Text>
+                    </View>
+                    <View style={styles.Section2Style}>
+                        <Text style={{fontSize: 22}}> Tag</Text>                        
+                    </View>
+                    <View style={styles.Section2Style}>
+                        <Text style={{fontSize: 18, color: 'rgba(243,156,18,1)'}}>@Gerard K, @VIck, @Ledoux, @Benni, @Tania, @Yannick, @Ludo...Read More</Text>                        
+                    </View>
                     <Text 
                         style={{margin: 15, fontSize: 22, fontWeight: 'bold'}}>
-                        #Popular
+                        #Related
                     </Text>
                     <SafeAreaView style={{ height: 140 }}>
                         <Carousel

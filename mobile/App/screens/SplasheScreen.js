@@ -3,7 +3,7 @@
 
 // Import React and Component
 import React, {useState, useEffect} from 'react';
-import {ActivityIndicator, View, StyleSheet, Image, Text} from 'react-native';
+import {ActivityIndicator, View, StyleSheet, Image, Text, ImageBackground } from 'react-native';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -24,10 +24,10 @@ const SplashScreen = ({navigation}) => {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <ImageBackground  style={styles.container} source={require('../assets/image/bg.png')}>
       <Text style={styles.welcome}> Welcome</Text>      
       <Image
-        source={require('../assets/image/about.gif')}
+        source={require('../assets/image/about_img.gif')}
         style={{width: '70%',  height: '35%' ,resizeMode: 'contain'}}
       />
       {/* <ActivityIndicator
@@ -36,7 +36,7 @@ const SplashScreen = ({navigation}) => {
         size="large"
         style={styles.activityIndicator}
       /> */}
-    </View>
+    </ImageBackground >
   );
 };
 
@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#ffffff',//'#ffbe76',
+    justifyContent: 'center',    
+    //backgroundColor: '#ffffff',//'#ffbe76',
   },
   activityIndicator: {
     alignItems: 'center',

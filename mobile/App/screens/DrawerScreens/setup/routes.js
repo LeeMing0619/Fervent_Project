@@ -13,6 +13,7 @@ import styles from '../styles/index';
 import DrawerMenu from '../screens/DrawerMenu';
 import Login from '../../LoginScreen';
 import Videos from '../screens/Videos';
+import VideoDetail from '../screens/VideoDetail'
 import BottomTabNavigator from '../components/BottomTab';
 import Prayewall from '../screens/Prayewall/index';
 import Profile from '../screens/Profile/index';
@@ -29,7 +30,6 @@ import DetailProye from '../screens/DetailProye';
 const DrawerNavigator = createDrawerNavigator({
     Prayewall:{
         screen: Prayewall,
-        navigationOptions: {headerStyle: {backgroundColor: 'red'}}
     },
     Profile:{
         screen: Profile,
@@ -43,13 +43,16 @@ const DrawerNavigator = createDrawerNavigator({
     Videos: {
         screen: Videos,
     },
+    VideoDetail: {
+        screen: VideoDetail,
+    },
     Logout: {
         screen: Login,
     }
 },{
     
     
-    initialRouteName: 'PostProye',
+    initialRouteName: 'Prayewall',
     contentComponent: DrawerMenu,    
     drawerWidth: '75%',
     // contentOptions: {
