@@ -56,14 +56,16 @@ export default styles = StyleSheet.create({
     },
     headerTitleStyle: {       
         left: -5 , 
+        fontSize: 24,
         textAlign: 'center',
-        fontWeight: '400',
+        fontWeight: '100',
         color:'#000'
     },
     headerTitleStyle1: {       
         left: -5 , 
         textAlign: 'center',
-        fontWeight: '400',
+        fontSize: 24,
+        fontWeight: '100',
         color:'#fff'
     },
     SectionStyle: {
@@ -108,7 +110,7 @@ export default styles = StyleSheet.create({
     },
     Section5Style: {
         flexDirection: 'column',
-        marginTop: 30,
+        marginTop: 20,
         marginLeft: 25,
         marginRight: 25,
     },

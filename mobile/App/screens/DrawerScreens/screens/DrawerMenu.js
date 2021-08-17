@@ -65,22 +65,23 @@ class DrawerScreen extends Component {
                 </View>
                 <View style={styles.menuItem}>
                   <EntypoIcon
-                    name="user"
+                    name="video"
                     style={{fontSize: 18, marginRight: 10, color: 'rgba(26,188,156,1)'}}
                   ></EntypoIcon>
-                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('Profile')}>
-                  Userprofile 
+                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('Videos')}>
+                  Video 
                   </Text>
                 </View>
                 <View style={styles.menuItem}>
                   <EntypoIcon
-                    name="notification"
+                    name="news"
                     style={{fontSize: 18, marginRight: 10, color: 'rgba(26,188,156,1)'}}
                   ></EntypoIcon>
                   <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('PostProye')}>
                   PostPrayer 
                   </Text>
                 </View>
+                               
 
                 <View style={styles.menuItemHeaderSetting}>
                   <Text style={{fontSize: 16, fontWeight: 'bold', color: '#9c9a9a'}} onPress={this.navigateToScreen('Prayewall')}>
@@ -89,10 +90,19 @@ class DrawerScreen extends Component {
                 </View>
                 <View style={styles.menuItem}>
                   <EntypoIcon
+                    name="user"
+                    style={{fontSize: 18, marginRight: 10, color: 'rgba(26,188,156,1)'}}
+                  ></EntypoIcon>
+                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('Profile')}>
+                  Userprofile 
+                  </Text>
+                </View> 
+                <View style={styles.menuItem}>
+                  <EntypoIcon
                     name="log-out"
                     style={{fontSize: 18, marginRight: 10, color: 'rgba(26,188,156,1)'}}
                   ></EntypoIcon>
-                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('PostProye')}>
+                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('Logout')}>
                   Log out 
                   </Text>
                 </View>

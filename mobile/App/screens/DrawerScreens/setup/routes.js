@@ -11,6 +11,8 @@ import SvgUri from 'react-native-svg-uri';
 import styles from '../styles/index';
 
 import DrawerMenu from '../screens/DrawerMenu';
+import Login from '../../LoginScreen';
+import Videos from '../screens/Videos';
 import BottomTabNavigator from '../components/BottomTab';
 import Prayewall from '../screens/Prayewall/index';
 import Profile from '../screens/Profile/index';
@@ -37,6 +39,12 @@ const DrawerNavigator = createDrawerNavigator({
     },
     DetailProye: {
         screen: DetailProye,
+    },
+    Videos: {
+        screen: Videos,
+    },
+    Logout: {
+        screen: Login,
     }
 },{
     
