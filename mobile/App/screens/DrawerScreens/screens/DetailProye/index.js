@@ -53,7 +53,7 @@ export default class DetailProye extends Component{
     .then((responseJson) => {      
       if (responseJson.status != 0) {
         this.setState({paywalls: responseJson});
-        console.log(this.state.paywalls);
+        //console.log(this.state.paywalls);
       }
     })
   }

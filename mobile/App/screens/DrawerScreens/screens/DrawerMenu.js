@@ -8,9 +8,6 @@ import styles from '../styles/index';
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-const items = [
-  { key: 1, time: '6:30 PM', postDate: 'Monday \n5 days ago', content: 'Please take a moment to send your urgent prayer request...', location: 'shenyang, Liaoning'},
-];
 class DrawerScreen extends Component {
   navigateToScreen = (route) => () => {
     const navigateAction = NavigationActions.navigate({
@@ -53,49 +50,49 @@ class DrawerScreen extends Component {
             <ScrollView>
               <View>
                 <View style={styles.menuItemHeader}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}} onPress={this.navigateToScreen('Prayewall')}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold', color: '#9c9a9a'}} onPress={this.navigateToScreen('Prayewall')}>
                     Title
                   </Text>
                 </View>
                 <View style={styles.menuItem}>
                   <EntypoIcon
                     name="home"
-                    style={{fontSize: 18, marginRight: 10, color: '#ffbe76'}}
+                    style={{fontSize: 18, marginRight: 10, color: 'rgba(26,188,156,1)'}}
                   ></EntypoIcon>
-                  <Text style={{color: '#ffbe76'}} onPress={this.navigateToScreen('Prayewall')}>
+                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('Prayewall')}>
                     Prayewall
                   </Text>
                 </View>
                 <View style={styles.menuItem}>
                   <EntypoIcon
                     name="user"
-                    style={{fontSize: 18, marginRight: 10, color: '#ffbe76'}}
+                    style={{fontSize: 18, marginRight: 10, color: 'rgba(26,188,156,1)'}}
                   ></EntypoIcon>
-                  <Text style={{color: '#ffbe76'}} onPress={this.navigateToScreen('Profile')}>
+                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('Profile')}>
                   Userprofile 
                   </Text>
                 </View>
                 <View style={styles.menuItem}>
                   <EntypoIcon
                     name="notification"
-                    style={{fontSize: 18, marginRight: 10, color: '#ffbe76'}}
+                    style={{fontSize: 18, marginRight: 10, color: 'rgba(26,188,156,1)'}}
                   ></EntypoIcon>
-                  <Text style={{color: '#ffbe76'}} onPress={this.navigateToScreen('PostProye')}>
+                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('PostProye')}>
                   PostPrayer 
                   </Text>
                 </View>
 
                 <View style={styles.menuItemHeaderSetting}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}} onPress={this.navigateToScreen('Prayewall')}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold', color: '#9c9a9a'}} onPress={this.navigateToScreen('Prayewall')}>
                     Setting
                   </Text>
                 </View>
                 <View style={styles.menuItem}>
                   <EntypoIcon
                     name="log-out"
-                    style={{fontSize: 18, marginRight: 10, color: '#ffbe76'}}
+                    style={{fontSize: 18, marginRight: 10, color: 'rgba(26,188,156,1)'}}
                   ></EntypoIcon>
-                  <Text style={{color: '#ffbe76'}} onPress={this.navigateToScreen('PostProye')}>
+                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('PostProye')}>
                   Log out 
                   </Text>
                 </View>

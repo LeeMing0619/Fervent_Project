@@ -34,7 +34,7 @@ export default class Prayewall extends Component{
     })
     .then((response) => response.json())
     .then((responseJson) => {
-      console.log(responseJson);
+      //console.log(responseJson);
       if (responseJson.status != 0) {
         this.setState({paywalls: responseJson});
       }
@@ -113,10 +113,10 @@ export default class Prayewall extends Component{
                   <Icon name="user-circle-o" style={styles.icon9}></Icon>
                   <Icon name="user-circle-o" style={styles.icon9}></Icon>
                   <Icon name="user-circle-o" style={styles.icon9}></Icon>
-                  <Text style={styles.peopleCount}> +5 People Praying</Text>
+                  <Text style={styles.peopleCount1}> +5 Praying</Text>
                 </View>                                
               </View>
-              </TouchableOpacity>
+            </TouchableOpacity>
             )
           })}
         </ScrollView>

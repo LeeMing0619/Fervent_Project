@@ -13,29 +13,29 @@ const SplashScreen = ({navigation}) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setAnimating(false);
+      //setAnimating(false);
       //Check if user_id is set or not
       //If not then send for Authentication
       //else send to Home Screen
       AsyncStorage.getItem('user_id').then((value) =>
         navigation.replace(value === null ? 'Auth' : 'DrawerNavigationRoutes'),        
       );
-    }, 3000);
+    }, 4000);
   }, []);
 
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}> Welcome</Text>      
       <Image
-        source={require('../assets/image/aboutreact.gif')}
-        style={{width: '60%',  height: '30%' ,resizeMode: 'contain'}}
+        source={require('../assets/image/about.gif')}
+        style={{width: '70%',  height: '35%' ,resizeMode: 'contain'}}
       />
-      <ActivityIndicator
+      {/* <ActivityIndicator
         animating={animating}
         color="#ffbe76"
         size="large"
         style={styles.activityIndicator}
-      />
+      /> */}
     </View>
   );
 };

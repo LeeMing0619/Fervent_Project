@@ -13,6 +13,8 @@ import {
   ScrollView,
   TouchableOpacity
 } from 'react-native';
+
+import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -23,6 +25,27 @@ const items = [
 ];
 
 export default class Profile extends Component{
+  constructor(props) {
+    super(props);
+    this.state = { colorId:0 };
+  }
+
+  handleInProgressButton = () => {
+    this.setState({colorId: 0});
+  }
+
+  handlePrayingButton = () => {
+    this.setState({colorId: 1});
+  }
+
+  handleCompletedButton = () => {
+    this.setState({colorId: 2});
+  }
+
+  handleAnswered = () => {
+    console.log('----------');
+  }
+
   render() {
     return (      
       <View style={styles.container}>
@@ -44,43 +67,95 @@ export default class Profile extends Component{
               ></EntypoIcon>              
               <Text style={styles.locationText1}>Lynn, MA, USA</Text>
             </View>
-            <View style={styles.viewTotal}>                        
-              <Text style={styles.prayer1}>1K {"\n"} Prayers</Text>
-              <Text style={styles.prayer2}>1K {"\n"} Praying</Text>
-              <Text style={styles.prayer3}>1K {"\n"} Completed</Text>
-            </View> 
           </View>
         </View>
+        <View style={styles.viewTotal}>                        
+          <TouchableOpacity
+            style={this.state.colorId === 0 ? styles.buttonInProgressStyle1 : styles.buttonCompletedStyle}
+            activeOpacity={0.5}
+            onPress={this.handleInProgressButton}>
+            <Text style={this.state.colorId === 0 ? styles.buttonRequestTextStyle : styles.buttonRequestTextStyle1}>Request</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={this.state.colorId === 1 ? styles.buttonInProgressStyle1 : styles.buttonCompletedStyle}
+            activeOpacity={0.5}
+            onPress={this.handlePrayingButton}>
+            <Text style={this.state.colorId === 1 ? styles.buttonPrayingTextStyle1 : styles.buttonPrayingTextStyle}>Praying</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={this.state.colorId === 2 ? styles.buttonInProgressStyle1 : styles.buttonCompletedStyle}
+            activeOpacity={0.5}
+            onPress={this.handleCompletedButton}>
+            <Text style={this.state.colorId === 2 ? styles.buttonCompletedTextStyle1 : styles.buttonCompletedTextStyle}>Completed</Text>
+          </TouchableOpacity>
+        </View> 
         <ScrollView  contentContainerStyle={{
           justifyContent: 'center',
           alignContent: 'center',
-          marginTop: 20,
+          marginTop: 0,
         }}>
           { items.map( item => {
-            return (              
+            if (this.state.colorId === 2)
+              return (
+                <View key= { item.key } style={styles.SectionStyle}>
+                <EntypoIcon
+                  name="dots-three-horizontal"
+                  style={styles.icon4}
+                ></EntypoIcon>
+                <View style={styles.Section2Style}>
+                  <View
+                    style={styles.viewDayStyle}
+                    activeOpacity={0.5}
+                    onPress={this.handleAnswered}>
+                    <Text style={styles.txtPostDate}>5 days ago</Text>
+                  </View>
+                </View>
+                <View style={styles.Section2Style}>                
+                  <Text numberOfLines={1} style={styles.contentText}>{ item.content } </Text>
+                </View>                  
+                <TouchableOpacity
+                     activeOpacity={0.5}
+                     onPress={() => this.props.navigation.navigate('Contact')}>
+                  <View style={styles.Section4Style}> 
+                      <EntypoIcon
+                        name="video-camera"
+                        style={styles.icon8}
+                      ></EntypoIcon>
+                      <Text style={styles.watchTest}> Testimony</Text>
+                  </View>
+                 </TouchableOpacity>                               
+              </View>
+              )
+            else
+            return (                            
               <View key= { item.key } style={styles.SectionStyle}>
                 <EntypoIcon
                   name="dots-three-horizontal"
                   style={styles.icon4}
                 ></EntypoIcon>
                 <View style={styles.Section2Style}>
-                  <Text style={styles.txtTime}> { item.time } </Text>
-                  <View style={styles.postDateView}>                    
-                    <Text style={styles.txtPostDate}> { item.postDate } </Text>
-                  </View>                  
+                  <View
+                    style={styles.viewDayStyle}
+                    activeOpacity={0.5}
+                    onPress={this.handleAnswered}>
+                    <Text style={styles.txtPostDate}>5 days ago</Text>
+                  </View>
                 </View>
                 <View style={styles.Section2Style}>                
-                  <Text style={styles.contentText}> { item.content } </Text>
+                  <Text numberOfLines={1} style={styles.contentText}>{ item.content } </Text>
+                </View>  
+                <View style={styles.Section2Style}>
+                  <IconFontAwesome name="user-circle-o" style={styles.icon9}></IconFontAwesome>
+                  <IconFontAwesome name="user-circle-o" style={styles.icon9}></IconFontAwesome>
+                  <IconFontAwesome name="user-circle-o" style={styles.icon9}></IconFontAwesome>
+                  <Text style={styles.peopleCount1}> +5 Praying</Text>
                 </View>
-                <View style={styles.Section3Style}>  
-                  <TouchableOpacity
-                    style={styles.button40Style}
-                    activeOpacity={0.5}
-                    onPress={() => this.props.navigation.navigate('Contact')}>
-                      <Text style={styles.buttonText40Style}>Prayer Answered</Text>
-                  </TouchableOpacity>            
-                  <Text style={styles.people2Count}> +3 People Praying</Text>
-                </View>
+                <TouchableOpacity
+                  style={styles.buttonStyle}
+                  activeOpacity={0.5}
+                  onPress={() => this.props.navigation.navigate('Contact')}>
+                    <Text style={styles.buttonTextStyle}>Answered</Text>
+                </TouchableOpacity>                                
               </View>
             )
           })}

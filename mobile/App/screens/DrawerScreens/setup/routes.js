@@ -1,11 +1,12 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator, DrawerActions } from 'react-navigation-drawer';
 import { Badge } from 'react-native-elements';
+import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import Icon from "react-native-vector-icons/MaterialIcons";
-
+import IoniconsIcon from "react-native-vector-icons/Ionicons";
 import SvgUri from 'react-native-svg-uri';
 import styles from '../styles/index';
 
@@ -26,6 +27,7 @@ import DetailProye from '../screens/DetailProye';
 const DrawerNavigator = createDrawerNavigator({
     Prayewall:{
         screen: Prayewall,
+        navigationOptions: {headerStyle: {backgroundColor: 'red'}}
     },
     Profile:{
         screen: Profile,
@@ -39,7 +41,7 @@ const DrawerNavigator = createDrawerNavigator({
 },{
     
     
-    initialRouteName: 'Prayewall',
+    initialRouteName: 'PostProye',
     contentComponent: DrawerMenu,    
     drawerWidth: '75%',
     // contentOptions: {
@@ -56,25 +58,36 @@ const DrawerNavigator = createDrawerNavigator({
 });
 
 const MenuImage = ({navigation}) => navigation.state.isDrawerOpen ?
-      <SvgUri width="25" height="25" source={require('../../../assets/image/left-arrow.svg')} />:
-      <SvgUri width="25" height="25" source={require('../../../assets/image/menu.svg')} />;
+        <FontAwesomeIcon name="exchange" style={navigation.state.index == 1 ? styles.iconMenu1: styles.iconMenu}></FontAwesomeIcon>://<SvgUri width="25" height="25" style={{backgroundColor: 'white'}} source={require('../../../assets/image/left-arrow.svg')} />:
+        <FontAwesomeIcon name="navicon" style={navigation.state.index == 1 ? styles.iconMenu1: styles.iconMenu}></FontAwesomeIcon>//<SvgUri width="25" height="25" source={require('../../../assets/image/menu.svg')} />;
 
 const MenuRightImage = ({navigation}) => 
-      <SvgUri width="30" height="30" source={require('../../../assets/image/notification.svg')} />;
+        <View style={{flexDirection: 'row'}}>
+            <TouchableOpacity style={styles.menuRightButton} onPress={() => {navigation.navigate('ShowProye')} }>
+                <Icon name="notifications-active"
+                    style={navigation.state.index == 1 ? styles.iconAlarm1: styles.iconAlarm}
+                ></Icon>
+                <Badge value='8' textStyle={{color: 'white'}} badgeStyle={{backgroundColor: 'red'}} containerStyle={{ backgroundColor: 'transparent', position: 'absolute', top: -4, right: 2 }} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.menuRightButton} onPress={() => {navigation.navigate('AddProye')} }>
+                <IoniconsIcon name="ios-add-circle"
+                    style={navigation.state.index == 1 ? styles.iconPlus1: styles.iconPlus}            
+                ></IoniconsIcon>
+            </TouchableOpacity>
+        </View>
+        
 
 const defaultNavigationOptions = ({ navigation }) => ({
   title: 'Fervent',
-  headerStyle: styles.headerStyle,
-  headerTitleStyle: styles.headerTitleStyle,
+  headerStyle: navigation.state.index == 1 ? styles.headerStyle1 : styles.headerStyle,
+  headerTitleStyle: navigation.state.index == 1 ? styles.headerTitleStyle1 : styles.headerTitleStyle,
   headerLeft:
         <TouchableOpacity style={styles.menuButton} onPress={() => {navigation.dispatch(DrawerActions.toggleDrawer())} }>
             <MenuImage navigation={navigation}/>
         </TouchableOpacity>,
-  headerRight:
-        <TouchableOpacity style={styles.menuRightButton} onPress={() => {navigation.navigate('DetailProye')} }>
-            <MenuRightImage navigation={navigation}/>
-            <Badge value='8' textStyle={{color: 'white'}} badgeStyle={{backgroundColor: 'red'}} containerStyle={{ backgroundColor: 'transparent', position: 'absolute', top: -4, right: 1 }} />
-        </TouchableOpacity>, 
+  headerRight:        
+            <MenuRightImage navigation={navigation}/>            
+ 
         
 })
 
@@ -82,7 +95,7 @@ const StackNavigator = createStackNavigator({
     DrawerNavigator:{
         screen: DrawerNavigator
     }
-},{ defaultNavigationOptions  });
+},{ defaultNavigationOptions });
 
 let Navigation = createAppContainer(StackNavigator);
 
