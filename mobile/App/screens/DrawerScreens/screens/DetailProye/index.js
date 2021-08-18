@@ -17,6 +17,7 @@ import styles from '../../styles/index';
 import Icon from "react-native-vector-icons/FontAwesome";
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
+import Popover, {PopoverPlacement} from 'react-native-popover-view';
 
 export default class DetailProye extends Component{
   constructor(props) {
@@ -88,10 +89,20 @@ export default class DetailProye extends Component{
           marginTop: 20,
         }}>         
           <View key= { paywalls.id } style={styles.SectionStyle}>
-            <EntypoIcon
-              name="dots-three-horizontal"
-              style={styles.icon4}
-            ></EntypoIcon>
+            <Popover
+              placement={PopoverPlacement.BOTTOM}
+              from={(sourceRef, showPopover) => (
+                <EntypoIcon
+                  name="dots-three-horizontal"
+                  style={styles.icon4}
+                  onPress={showPopover}
+                ></EntypoIcon>
+              )}>
+              <View style={{flexDirection: 'column', justifyContent:"center", alignContent: 'center', width: 150, height: 100}}>
+                <Text style={{borderBottomWidth: 0.2, textAlign: 'center', padding: 12, fontSize: 14}}><Icon name="assistive-listening-systems" style={{fontSize: 20, color: 'rgba(26,188,156,1)'}}/> Listen</Text>                    
+                <Text style={{textAlign: 'center', padding: 12, fontSize: 14}}><Icon name="volume-control-phone" style={{fontSize: 20, color: 'rgba(26,188,156,1)'}}/> Report</Text>
+              </View>
+            </Popover>
             <View style={styles.Section2Style}>
               <View
                 style={styles.viewDayStyle}

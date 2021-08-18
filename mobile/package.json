@@ -27,6 +27,7 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-multiple-select": "^0.5.6",
     "react-native-paper": "^4.9.2",
+    "react-native-popover-view": "^4.0.2",
     "react-native-radio-button": "^2.0.1",
     "react-native-reanimated": "^1.13.3",
     "react-native-safe-area-context": "^3.3.0",

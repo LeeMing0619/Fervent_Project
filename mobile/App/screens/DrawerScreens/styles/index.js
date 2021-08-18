@@ -166,7 +166,7 @@ export default styles = StyleSheet.create({
         marginRight: 0,
         marginLeft: '92%',
         color: "rgba(0,0,0,1)",
-        fontSize: 26
+        fontSize: 26,
     },
     icon9: {
         marginRight: 2,
