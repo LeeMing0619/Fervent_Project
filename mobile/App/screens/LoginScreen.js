@@ -13,14 +13,14 @@ import {
   Keyboard,
   TouchableOpacity,
   KeyboardAvoidingView,
+  ImageBackground,
 } from 'react-native';
 
 import { StackActions } from '@react-navigation/routers';
-
 import AsyncStorage from '@react-native-community/async-storage';
+import FadeInView from 'react-native-fade-in-view';
 
 import Loader from './Components/Loader';
-
 import CheckBox from './Components/CheckBox';
 
 const LoginScreen = ({navigation}) => {
@@ -28,10 +28,18 @@ const LoginScreen = ({navigation}) => {
   const [userPassword, setUserPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errortext, setErrortext] = useState('');
-  
+  const [isLoginSuccess, setIsLoginSuccess] = useState(false);
+
   const passwordInputRef = createRef();
   const [isSelected, setSelection] = useState(false);
   
+  const gotoHome = () => {
+    if (isLoginSuccess)
+      setTimeout(() => {
+        navigation.dispatch(StackActions.replace('DrawerNavigationRoutes'));        
+      }, 4000);
+  };
+
   const handleCheckBox = () => {
     setSelection(!isSelected);
   }
@@ -75,7 +83,8 @@ const LoginScreen = ({navigation}) => {
         console.log(responseJson.id);
         // navigation.push('DrawerNavigationRoutes');
         // navigation.replace('DrawerNavigationRoutes');
-        navigation.dispatch(StackActions.replace('DrawerNavigationRoutes'));
+        //navigation.dispatch(StackActions.replace('DrawerNavigationRoutes'));        
+        setIsLoginSuccess(true);
       } else {
         setErrortext('Please check your email id or password');
         console.log('Please check your email id or password');
@@ -87,6 +96,38 @@ const LoginScreen = ({navigation}) => {
       console.error(error);
     });
   };
+  if (isLoginSuccess) {
+    gotoHome();
+    return (      
+      <ImageBackground  
+        style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',  
+        }} 
+        source={require('../assets/image/bg.png')}
+      >
+        <FadeInView
+          duration={2000}
+          style={{ alignItems: 'center' }}
+        >
+          <Text style={{
+            color: "#121212",
+            fontSize: 40,
+            fontWeight: 'bold',
+            marginBottom: 10,
+          }}> 
+            Let's PRAY
+          </Text>            
+        </FadeInView>  
+        <Image
+          source={require('../assets/image/about_img.gif')}
+          style={{width: '70%',  height: '35%' ,resizeMode: 'contain'}}
+          fadeDuration={2000}
+        />
+      </ImageBackground >
+    )
+  }
 
   return (
     <View style={styles.mainBody}>
@@ -243,5 +284,7 @@ const styles = StyleSheet.create({
     height: 28,
     //backgroundColor: "#E6E6E6"
   },
-  
+  fadingContainer: {
+    padding: 1,
+  }
 });

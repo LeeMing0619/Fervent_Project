@@ -61,8 +61,7 @@
                     <VideoPlayer
                         video={{ uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4' }}
                         videoWidth={Dimensions.get("window").width * 1.0}
-                        videoHeight={300}      
-                        controls={true}                  
+                        videoHeight={300}            
                         fullscreen={true}
                         thumbnail={{ uri: 'https://i.picsum.photos/id/866/1600/900.jpg' }}
                     />
