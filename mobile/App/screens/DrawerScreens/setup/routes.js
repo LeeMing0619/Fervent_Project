@@ -80,7 +80,7 @@ const MenuRightImage = ({navigation}) =>
                 ></Icon>
                 <Badge value='8' textStyle={{color: 'white'}} badgeStyle={{backgroundColor: 'red'}} containerStyle={{ backgroundColor: 'transparent', position: 'absolute', top: -4, right: 2 }} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.menuRightButton} onPress={() => {this.navigateToScreen('PostProye')} }>
+            <TouchableOpacity style={styles.menuRightButton} onPress={() => {navigation.navigate('PostProye')} }>
                 <IoniconsIcon name="ios-add-circle"
                     style={navigation.state.index == 1 ? styles.iconPlus1: styles.iconPlus}            
                 ></IoniconsIcon>
