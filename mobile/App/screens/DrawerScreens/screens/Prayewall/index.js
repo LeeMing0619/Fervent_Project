@@ -1,18 +1,9 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component, useState } from 'react';
 import {
-  Platform,
-  StyleSheet,
   Text,
   View,
   ScrollView,
   TouchableOpacity,
-  TouchableWithoutFeedback
 } from 'react-native';
 
 import Popover, {PopoverPlacement} from 'react-native-popover-view';

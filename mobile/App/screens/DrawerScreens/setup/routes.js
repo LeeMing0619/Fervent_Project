@@ -7,7 +7,6 @@ import { Badge } from 'react-native-elements';
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
-import SvgUri from 'react-native-svg-uri';
 import styles from '../styles/index';
 
 import DrawerMenu from '../screens/DrawerMenu';
@@ -49,9 +48,7 @@ const DrawerNavigator = createDrawerNavigator({
     Logout: {
         screen: Login,
     }
-},{
-    
-    
+},{ 
     initialRouteName: 'Prayewall',
     contentComponent: DrawerMenu,    
     drawerWidth: '75%',

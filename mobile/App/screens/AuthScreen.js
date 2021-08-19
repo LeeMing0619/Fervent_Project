@@ -1,14 +1,10 @@
-// Example of Splash, Login and Sign Up in React Native
-// https://aboutreact.com/react-native-login-and-signup/
-
-// Import React and Component
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {
   View, 
   StyleSheet, 
   Text,
   TouchableOpacity,
-  Image} from 'react-native';
+} from 'react-native';
 
 const AuthScreen = ({navigation}) => {
   return (

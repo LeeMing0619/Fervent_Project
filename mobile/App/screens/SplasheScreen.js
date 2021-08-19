@@ -3,7 +3,7 @@
 
 // Import React and Component
 import React, {useState, useEffect} from 'react';
-import {ActivityIndicator, View, StyleSheet, Image, Text, ImageBackground } from 'react-native';
+import {StyleSheet, Image, Text, ImageBackground } from 'react-native';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
