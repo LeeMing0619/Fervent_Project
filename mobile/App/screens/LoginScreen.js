@@ -31,8 +31,11 @@ const LoginScreen = ({navigation}) => {
   
   const gotoHome = () => {
     if (isLoginSuccess)
-      setTimeout(() => {
-        navigation.dispatch(StackActions.replace('DrawerNavigationRoutes'));        
+      setTimeout(() => {        
+        if (navigation.state != null && navigation.state.routeName == "Logout")
+          navigation.replace('DrawerNavigator');
+        else
+          navigation.dispatch(StackActions.replace('DrawerNavigationRoutes'));        
       }, 2000);
   };
 
