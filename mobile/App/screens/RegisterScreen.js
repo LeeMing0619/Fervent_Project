@@ -272,7 +272,7 @@ const RegisterScreen = (props) => {
               <CheckBox
                   selected={isSelected}
                   onPress={handleCheckBox}
-                  textStyle={{fontSize: 10}}
+                  textStyle={{fontSize: 8}}
                   text="By checking this box you're allowing
                         us to always use your current location."
                 />
@@ -364,7 +364,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 8,
     borderColor: '#dadae8',
-    width: 341,
+    width: '100%',
     height: 40,
     backgroundColor: "transparent",
   },

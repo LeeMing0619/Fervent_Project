@@ -4,16 +4,18 @@ import {
   View,
   ScrollView,
   TouchableOpacity,
+  Dimensions
 } from 'react-native';
 
 import Popover, {PopoverPlacement} from 'react-native-popover-view';
-import SlidingModal from '../../components/SlidingModal';
 
 import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icon from "react-native-vector-icons/FontAwesome";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import styles from '../../styles/index';
+import Modal from '../../components/SlidingModal';
 
+const win = Dimensions.get('window');
 export default class Prayewall extends Component{ 
   constructor(props) {
       super(props);
@@ -49,6 +51,88 @@ export default class Prayewall extends Component{
     this.setState({visible: show});
   }
 
+  renderModalContent = () => {
+    return(
+      <View style={{ height: win.height - 300, justifyContent: 'center', alignContent: 'center', }}>
+      <ScrollView  contentContainerStyle={{flexGrow: 1,
+      }}>
+      <View style={styles.Section2Style1}>
+        <Icon
+          name="user-circle-o"
+          style={styles.icon10}
+        ></Icon>
+        <MaterialCommunityIconsIcon
+          name="chess-king"
+          style={styles.icon11}
+        ></MaterialCommunityIconsIcon>
+        <Text style={styles.gerardM}>Gerard, M</Text>
+        <Text style={styles.christian}>Christian</Text>
+      </View>
+      <View style={styles.Section2Style1}>
+        <Icon
+          name="user-circle-o"
+          style={styles.icon10}
+        ></Icon>
+        <MaterialCommunityIconsIcon
+          name="chess-king"
+          style={styles.icon11}
+        ></MaterialCommunityIconsIcon>
+        <Text style={styles.gerardM}>Gerard, M</Text>
+        <Text style={styles.christian}>Christian</Text>
+      </View>
+      <View style={styles.Section2Style1}>
+        <Icon
+          name="user-circle-o"
+          style={styles.icon10}
+        ></Icon>
+        <MaterialCommunityIconsIcon
+          name="chess-king"
+          style={styles.icon11}
+        ></MaterialCommunityIconsIcon>
+        <Text style={styles.gerardM}>Gerard, M</Text>
+        <Text style={styles.christian}>Christian</Text>
+      </View>
+      <View style={styles.Section2Style1}>
+        <Icon
+          name="user-circle-o"
+          style={styles.icon10}
+        ></Icon>
+        <MaterialCommunityIconsIcon
+          name="chess-king"
+          style={styles.icon11}
+        ></MaterialCommunityIconsIcon>
+        <Text style={styles.gerardM}>Gerard, M</Text>
+        <Text style={styles.christian}>Christian</Text>
+      </View>
+      <View style={styles.Section2Style1}>
+        <Icon
+          name="user-circle-o"
+          style={styles.icon10}
+        ></Icon>
+        <MaterialCommunityIconsIcon
+          name="chess-king"
+          style={styles.icon11}
+        ></MaterialCommunityIconsIcon>
+        <Text style={styles.gerardM}>Gerard, M</Text>
+        <Text style={styles.christian}>Christian</Text>
+      </View>
+      <View style={styles.Section2Style1}>
+        <Icon
+          name="user-circle-o"
+          style={styles.icon10}
+        ></Icon>
+        <MaterialCommunityIconsIcon
+          name="chess-king"
+          style={styles.icon11}
+        ></MaterialCommunityIconsIcon>
+        <Text style={styles.gerardM}>Gerard, M</Text>
+        <Text style={styles.christian}>Christian</Text>
+      </View>
+      </ScrollView>
+      </View>
+    );
+  }
+
   render() {
     const { paywalls } = this.state;
     const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -77,8 +161,7 @@ export default class Prayewall extends Component{
         }}>
          
           { paywalls.flatMap( item => {
-            let date = new Date(item.created_at);
-            let time = date.getHours() + ":" + date.getMinutes();
+            let date = new Date(item.created_at);            
             let offsetDate = new Date().getDate() - date.getDate();
             let postDate = days[date.getDay()];
             return (
@@ -124,7 +207,7 @@ export default class Prayewall extends Component{
                   <Icon name="user-circle-o" style={styles.icon9}></Icon>
                   <Icon name="user-circle-o" style={styles.icon9}></Icon>
                   <Icon name="user-circle-o" style={styles.icon9}></Icon>
-                  <Text style={styles.peopleCount1} onPress={() => {this.handleVisible(true)} }> +5 Praying</Text>
+                  <Text style={styles.peopleCount1} onPress={() => {this.handleVisible(true)} }> 5 Praying</Text>
                 </View>                                
               </View>
             </TouchableOpacity>
@@ -133,97 +216,20 @@ export default class Prayewall extends Component{
         </ScrollView>
 
         {/* SHow Modal */}
-        <SlidingModal
-          isVisible={this.state.visible}
-        >
-          <View style={{ height: 350, width:  400, justifyContent: 'center', alignContent: 'center', backgroundColor: '#ebeef2' }}>
-            <ScrollView  contentContainerStyle={{
-              justifyContent: 'center',
-              alignContent: 'center',
-              marginTop: 10,
-              marginBottom: 20
-            }}>
-              <View style={styles.Section2Style}>
-                <Icon
-                  name="user-circle-o"
-                  style={styles.icon10}
-                ></Icon>
-                <MaterialCommunityIconsIcon
-                  name="chess-king"
-                  style={styles.icon11}
-                ></MaterialCommunityIconsIcon>
-                <Text style={styles.gerardM}>Gerard, M</Text>
-                <Text style={styles.christian}>Christian</Text>
-              </View>
-              <View style={styles.Section2Style}>
-                <Icon
-                  name="user-circle-o"
-                  style={styles.icon10}
-                ></Icon>
-                <MaterialCommunityIconsIcon
-                  name="chess-king"
-                  style={styles.icon11}
-                ></MaterialCommunityIconsIcon>
-                <Text style={styles.gerardM}>Gerard, M</Text>
-                <Text style={styles.christian}>Christian</Text>
-              </View>
-              <View style={styles.Section2Style}>
-                <Icon
-                  name="user-circle-o"
-                  style={styles.icon10}
-                ></Icon>
-                <MaterialCommunityIconsIcon
-                  name="chess-king"
-                  style={styles.icon11}
-                ></MaterialCommunityIconsIcon>
-                <Text style={styles.gerardM}>Gerard, M</Text>
-                <Text style={styles.christian}>Christian</Text>
-              </View>
-              <View style={styles.Section2Style}>
-                <Icon
-                  name="user-circle-o"
-                  style={styles.icon10}
-                ></Icon>
-                <MaterialCommunityIconsIcon
-                  name="chess-king"
-                  style={styles.icon11}
-                ></MaterialCommunityIconsIcon>
-                <Text style={styles.gerardM}>Gerard, M</Text>
-                <Text style={styles.christian}>Christian</Text>
-              </View>
-              <View style={styles.Section2Style}>
-                <Icon
-                  name="user-circle-o"
-                  style={styles.icon10}
-                ></Icon>
-                <MaterialCommunityIconsIcon
-                  name="chess-king"
-                  style={styles.icon11}
-                ></MaterialCommunityIconsIcon>
-                <Text style={styles.gerardM}>Gerard, M</Text>
-                <Text style={styles.christian}>Christian</Text>
-              </View>
-              <View style={styles.Section2Style}>
-                <Icon
-                  name="user-circle-o"
-                  style={styles.icon10}
-                ></Icon>
-                <MaterialCommunityIconsIcon
-                  name="chess-king"
-                  style={styles.icon11}
-                ></MaterialCommunityIconsIcon>
-                <Text style={styles.gerardM}>Gerard, M</Text>
-                <Text style={styles.christian}>Christian</Text>
-              </View>
-            </ScrollView>
-          </View>
-          <TouchableOpacity
-            style={styles.buttonStyle1}
-            activeOpacity={0.5}
-            onPress={() => {this.handleVisible(false)}}>
-              <Text style={styles.buttonTextStyle}>Close</Text>
-          </TouchableOpacity>
-        </SlidingModal> 
+        <Modal
+          show={this.state.visible}
+          closeCallback={() => {this.handleVisible(false)}}
+          top={250}
+          fullScreenCallback={() => {}}          
+         >
+           <Modal.Header>
+              <Text>
+                {/* Header Title */}
+              </Text>
+            </Modal.Header>
+          {this.renderModalContent()}
+          
+        </Modal>
       </View>
      
     );

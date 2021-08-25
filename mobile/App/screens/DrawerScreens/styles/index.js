@@ -93,6 +93,12 @@ export default styles = StyleSheet.create({
         marginRight: 15,
         marginTop: 15,
     },
+    Section2Style1: {
+        flexDirection: 'row',
+        marginLeft: 25,
+        marginRight: 25,
+        marginTop: 15,
+    },
     Section3Style: {
         flexDirection: 'row',
         marginTop: 30,
