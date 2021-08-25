@@ -17,11 +17,11 @@
  export default class Videos extends Component{
     state = {
         data: [
-            { title: 'a', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
-            { title: 'b', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
-            { title: 'c', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
-            { title: 'd', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
-            { title: 'e', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
+            { title: 'a', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
+            { title: 'b', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
+            { title: 'c', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
+            { title: 'd', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
+            { title: 'e', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
         ],
         activeSlide: 0,
     }
@@ -72,7 +72,7 @@
             }}>
                 <View style={{marginTop: 10}}>
                     <Text 
-                        style={{marginBottom: 10, marginLeft: 15, fontSize: 22, fontWeight: 'bold'}}>
+                        style={{marginBottom: 10, marginLeft: 15, fontSize: 20, fontWeight: 'bold', color: '#9c9a9a'}}>
                         #Trending
                     </Text>
                     <SafeAreaView style={{ height: 300 }}>

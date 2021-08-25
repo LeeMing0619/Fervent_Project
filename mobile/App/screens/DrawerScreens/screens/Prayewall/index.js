@@ -139,7 +139,7 @@ export default class Prayewall extends Component{
 
     return (
       <View style={styles.container}>
-        <View style={styles.Section2Style}>
+        <View style={styles.Section1Style}>
           <TouchableOpacity
             style={styles.buttonInProgressStyle}
             activeOpacity={0.5}
@@ -156,8 +156,9 @@ export default class Prayewall extends Component{
         <ScrollView  contentContainerStyle={{
           justifyContent: 'center',
           alignContent: 'center',
-          marginTop: 10,
-          marginBottom: 20
+          marginBottom: 10,
+          marginLeft: 10,
+          marginRight: 10,
         }}>
          
           { paywalls.flatMap( item => {
@@ -171,45 +172,53 @@ export default class Prayewall extends Component{
                   this.props.navigation.navigate(
                     'DetailProye', { id: item.id });
               }}>
-              <View key= { item.id } style={styles.SectionStyle}>
-                <Popover
-                  placement={PopoverPlacement.BOTTOM}
-                  from={(sourceRef, showPopover) => (
-                    <EntypoIcon
-                      name="dots-three-horizontal"
-                      style={styles.icon4}
-                      onPress={showPopover}
-                    ></EntypoIcon>
-                  )}>
-                  <View style={{flexDirection: 'column', justifyContent:"center", alignContent: 'center', width: 150, height: 100}}>
-                    <Text style={{borderBottomWidth: 0.2, textAlign: 'center', padding: 12, fontSize: 14}}><Icon name="assistive-listening-systems" style={{fontSize: 20, color: 'rgba(26,188,156,1)'}}/> Listen</Text>                    
-                    <Text style={{textAlign: 'center', padding: 12, fontSize: 14}}><Icon name="volume-control-phone" style={{fontSize: 20, color: 'rgba(26,188,156,1)'}}/> Report</Text>
-                  </View>
-                </Popover>
-                
-                <View style={styles.Section2Style}>
+              <View key= { item.id } style={styles.SectionStyle}>              
+                <View style={{
+                  borderRadius: 10,
+                  // To round image corners
+                  overflow: 'hidden',
+                  borderColor: '#d8e5f5',
+                  //borderWidth: 0.1,
+                  // https://github.com/facebook/react-native/issues/10049#issuecomment-366426897
+                  backgroundColor: '#FFF',                  
+                  // Android shadow
+                  paddingBottom: 10,
+                  elevation: 10}}>
+                <View style={styles.Section2Style}>   
                   <View
                     style={styles.viewDayStyle}
                     activeOpacity={0.5}
                     onPress={this.handleInProgressButton}>
                     <Text style={styles.txtPostDate}>{ offsetDate } days ago</Text>
                   </View>
-                  {/* <Text style={styles.txtTime}> { time } </Text>
-                    <View style={styles.postDateView}>                    
-                    <Text style={styles.txtPostDate}> { postDate } </Text>
-                    <Text style={styles.txtPostDate}> { offsetDate } days ago </Text>
-                  </View>                   */}
+                  <Popover
+                    placement={PopoverPlacement.BOTTOM}
+                    from={(sourceRef, showPopover) => (
+                      <EntypoIcon
+                        name="dots-three-horizontal"
+                        style={styles.icon4}
+                        onPress={showPopover}
+                      ></EntypoIcon>
+                    )}>
+                    <View style={{flexDirection: 'column', justifyContent:"center", alignContent: 'center', width: 150, height: 100}}>
+                      <Text style={{borderBottomWidth: 0.2, textAlign: 'center', padding: 12, fontSize: 14}}><Icon name="assistive-listening-systems" style={{fontSize: 20, color: 'rgba(26,188,156,1)'}}/> Listen</Text>                    
+                      <Text style={{textAlign: 'center', padding: 12, fontSize: 14}}><Icon name="volume-control-phone" style={{fontSize: 20, color: 'rgba(26,188,156,1)'}}/> Report</Text>
+                    </View>
+                  </Popover>                  
                 </View>
                 <View style={styles.Section2Style}>                
                   <Text numberOfLines={1} style={styles.contentText}>{ item.content } </Text>
                 </View>  
                 <View style={styles.Section2Style}>
+                  <View style={{flexDirection: 'row',}}>
                   <Icon name="user-circle-o" style={styles.icon9}></Icon>
                   <Icon name="user-circle-o" style={styles.icon9}></Icon>
                   <Icon name="user-circle-o" style={styles.icon9}></Icon>
+                  </View>
                   <Text style={styles.peopleCount1} onPress={() => {this.handleVisible(true)} }> 5 Praying</Text>
                 </View>                                
               </View>
+              </View>            
             </TouchableOpacity>
             )
           })}

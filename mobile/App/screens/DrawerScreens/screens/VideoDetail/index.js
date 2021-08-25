@@ -21,19 +21,27 @@
  export default class VideoDetail extends Component{
     state = {
         data: [
-            { title: 'a', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
-            { title: 'b', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
-            { title: 'c', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
-            { title: 'd', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
-            { title: 'e', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Grey_background.jpg/1200px-Grey_background.jpg' },
+            { title: 'a', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
+            { title: 'b', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
+            { title: 'c', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
+            { title: 'd', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
+            { title: 'e', url: 'https://photo69.macsc.com/2019/05/27/JPG-190527_444/mZbHmLQnmz_small.jpg' },
         ],
         activeSlide: 0,
     }
     
+    navigateToScreen = (route) => () => {    
+        const navigateAction = NavigationActions.navigate({
+            routeName: route
+        });
+        this.props.navigation.dispatch(navigateAction);
+        this.props.navigation.dispatch(DrawerActions.closeDrawer())    
+    }
+
     _renderItemPopular = ({ item, index }) => {
         return (
             <TouchableHighlight
-                onPress={() => Linking.openURL(item.url)}
+                onPress={this.navigateToScreen('Home')}
             >
                 <View style={{flexDirection: 'column'}} key={index}>
                     <Image source={{uri: item.url}} style={{ width: '100%', height: '100%' }} />
@@ -59,7 +67,7 @@
                         fullscreen={true}
                         thumbnail={{ uri: 'https://i.picsum.photos/id/866/1600/900.jpg' }}
                     />
-                    <View style={styles.Section2Style}>
+                    <View style={styles.Section2Style1}>
                         <FontAwesomeIcon
                             name="user-circle-o"
                             style={styles.icon10}

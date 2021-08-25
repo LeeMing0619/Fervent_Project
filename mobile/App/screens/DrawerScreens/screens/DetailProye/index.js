@@ -63,7 +63,7 @@ export default class DetailProye extends Component{
 
     return (
       <View style={styles.container}>
-        <View style={styles.Section2Style}>
+        <View style={styles.Section2Style1}>
           <Icon
             name="user-circle-o"
             style={styles.icon10}
@@ -81,7 +81,25 @@ export default class DetailProye extends Component{
           marginTop: 20,
         }}>         
           <View key= { paywalls.id } style={styles.SectionStyle}>
-            <Popover
+          <View style={{
+                  borderRadius: 10,
+                  // To round image corners
+                  overflow: 'hidden',
+                  borderColor: '#d8e5f5',
+                  //borderWidth: 0.1,
+                  // https://github.com/facebook/react-native/issues/10049#issuecomment-366426897
+                  backgroundColor: '#FFF',                  
+                  // Android shadow
+                  paddingBottom: 10,
+                  elevation: 10}}>         
+            <View style={styles.Section2Style}>
+              <View
+                style={styles.viewDayStyle}
+                activeOpacity={0.5}
+                onPress={this.handleInProgressButton}>
+                <Text style={styles.txtPostDate}>{ offsetDate } days ago</Text>
+              </View>                 
+              <Popover
               placement={PopoverPlacement.BOTTOM}
               from={(sourceRef, showPopover) => (
                 <EntypoIcon
@@ -95,23 +113,19 @@ export default class DetailProye extends Component{
                 <Text style={{textAlign: 'center', padding: 12, fontSize: 14}}><Icon name="volume-control-phone" style={{fontSize: 20, color: 'rgba(26,188,156,1)'}}/> Report</Text>
               </View>
             </Popover>
-            <View style={styles.Section2Style}>
-              <View
-                style={styles.viewDayStyle}
-                activeOpacity={0.5}
-                onPress={this.handleInProgressButton}>
-                <Text style={styles.txtPostDate}>{ offsetDate } days ago</Text>
-              </View>                 
             </View>
             <View style={styles.Section2Style}>                
               <Text style={styles.contentText}>{ paywalls.content } </Text>
             </View>
             <View style={styles.Section2Style}>
+            <View style={{flexDirection: 'row',}}>
               <Icon name="user-circle-o" style={styles.icon9}></Icon>
               <Icon name="user-circle-o" style={styles.icon9}></Icon>
               <Icon name="user-circle-o" style={styles.icon9}></Icon>
+              </View>
               <Text style={styles.peopleCount1}> +55 Praying</Text>
             </View> 
+          </View>
           </View>
         </ScrollView>
         <TouchableOpacity

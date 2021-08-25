@@ -53,8 +53,8 @@
           }}>
             <View style={styles.Section5Style}>
               <Text 
-                style={{fontSize: 24}}>
-                  Send your prayer request to {"\n"}Christians in your area
+                style={{fontSize: 18, color: '#9c9a9a'}}>
+                  Send your prayer request to Christians in your area
               </Text>
               <TextInput 
                 style={{
@@ -112,7 +112,7 @@
                 {this.multiSelect && this.multiSelect.getSelectedItemsExt(selectedItems)}
               </View>
               <Text 
-                style={{fontSize: 18, marginTop: 15, marginBottom: 40}}>
+                style={{fontSize: 18, marginTop: 15, marginBottom: 40, color: '#9c9a9a'}}>
                   The app will use your location to post your prayer to all the Christians in that area.
               </Text>
               <TouchableOpacity

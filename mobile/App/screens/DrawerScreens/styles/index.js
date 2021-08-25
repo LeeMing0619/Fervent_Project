@@ -8,7 +8,6 @@ export default styles = StyleSheet.create({
     heading: {
         fontSize: 20,
         textAlign: 'center',
-        margin: 10,
     },
     menuItem:{
         flexDirection: 'row',
@@ -42,17 +41,21 @@ export default styles = StyleSheet.create({
     },
     headerStyle:{
         //textAlign: 'center',
-        //height: 60,
+        height: 50,
         backgroundColor: '#ffffff',//#ffbe76',
         //backgroundColor: 'transparent',
         elevation: 0,
         shadowOpacity: 0,
     },
     headerStyle1: {
+        height: 50,
         backgroundColor: 'rgba(26,188,156,1)',//#ffbe76',
         //backgroundColor: 'transparent',
         elevation: 0,
-        shadowOpacity: 0,
+        marginLeft: 10,
+        marginRight: 10,
+        marginTop: 10,
+        marginBottom: 10,
     },
     headerTitleStyle: {       
         left: -5 , 
@@ -72,32 +75,43 @@ export default styles = StyleSheet.create({
         flexDirection: 'column',
         marginLeft: 10,
         marginRight: 10,
-        marginTop: 10,
-        marginBottom: 20,
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: "rgba(236,240,241,1)",
-        shadowColor: "rgba(0,0,0,1)",
-        shadowOffset: {
-            width: 0,
-            height: 0
-        },
-        elevation: 1,
-        shadowOpacity: 1,
-        shadowRadius: 5,
-        padding: 10
+        marginTop: 5,
+        marginBottom: 10,
+        //borderRadius: 5,
+        //borderWidth: 1,
+        //borderColor: "rgba(236,240,241,1)",
+        //shadowColor: "rgba(0,0,0,1)",
+        //shadowOffset: {
+        //    width: 0,
+        //    height: 0
+        //},
+        //elevation: 1,
+        //shadowOpacity: 1,
+        //shadowRadius: 5,
+        //padding: 10
+    },
+    Section1Style: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 15,
+        marginRight: 15,
+        marginTop: 5,
+        marginBottom: 15,
     },
     Section2Style: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
         marginLeft: 15,
         marginRight: 15,
-        marginTop: 15,
+        marginTop: 18,
     },
     Section2Style1: {
         flexDirection: 'row',
-        marginLeft: 25,
-        marginRight: 25,
-        marginTop: 15,
+        marginLeft: 15,
+        marginRight: 15,
+        marginTop: 25,
     },
     Section3Style: {
         flexDirection: 'row',
@@ -107,10 +121,14 @@ export default styles = StyleSheet.create({
     },
     Section4Style: { 
         flexDirection: 'row',
-        marginLeft: '60%',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        //marginLeft: '60%',
         marginTop: 20,
-        height: 50,
-        padding: 10,
+        height: 35,
+        width: 130,
+        paddingLeft: 15,
+        paddingRight: 15,
         borderRadius: 5,
         backgroundColor: "rgba(243,156,18,0.2)",
     },
@@ -132,13 +150,15 @@ export default styles = StyleSheet.create({
         fontSize: 16,
         textAlign: 'center',
         paddingVertical: 3,
-        color: "rgba(26,188,156,1)"
+        color: "rgba(8, 189, 153,1)"
     },
     contentText: {
-        fontSize: 20,
+        fontSize: 16,
         borderLeftWidth: 5,
         borderLeftColor: "rgba(26,188,156,1)",
-        paddingLeft: 15,
+        borderRadius: 3,
+        paddingLeft: 10,
+        color: '#505252',
     },
     iconMenu: {
         fontSize: 28,
@@ -169,9 +189,12 @@ export default styles = StyleSheet.create({
         color: "rgba(255,255,255,1)",
     },
     icon4: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
         marginRight: 0,
-        marginLeft: '92%',
-        color: "rgba(0,0,0,1)",
+        textAlign:'right',
+        //marginLeft: '57%',
+        color: "rgba(165, 168, 168,0.9)",
         fontSize: 26,
     },
     icon9: {
@@ -206,7 +229,7 @@ export default styles = StyleSheet.create({
     },
     icon8: {
         color: "rgba(242, 130, 2,1)",
-        fontSize: 30
+        fontSize: 22
     },
     gerardM: {
         fontSize: 17,
@@ -235,14 +258,16 @@ export default styles = StyleSheet.create({
         color: 'rgba(255,190,118,1)'
     },
     peopleCount1: {
-        width: 109,    
-        height: 30,
+        width: 100,    
+        height: 28,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
         backgroundColor: "rgba(243,156,18,0.2)",
-        borderRadius: 5,        
-        marginLeft: '48%',
-        fontSize: 18,
+        borderRadius: 5, 
+        fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'center',
+        textAlignVertical: 'center',
         color: 'rgba(243,156,18,1)'
     },
     people2Count: {
@@ -253,7 +278,7 @@ export default styles = StyleSheet.create({
         color: '#f28102'
     },
     viewDayStyle: {
-        backgroundColor: "rgba(46,204,113,1)",
+        backgroundColor: "rgba(46,204,113,0.4)",
         borderRadius: 5,
         opacity: 0.27,
         width: 116,
@@ -261,15 +286,15 @@ export default styles = StyleSheet.create({
     },
     buttonInProgressStyle: {
         backgroundColor: "rgba(26,188,156,1)",
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: "rgba(236,240,241,1)",
         shadowColor: "rgba(26,188,156,1)",
         shadowOffset: {
             width: 0,
-            height: 1
+            height: 0
         },
         height: 31,
-        width: 95,
+        width: '45%',
         elevation: 5,
         shadowOpacity: 0.06,
         shadowRadius: 5,
@@ -277,7 +302,7 @@ export default styles = StyleSheet.create({
         marginLeft: 0,
         marginRight: 12,
         marginTop: 17,
-        marginBottom: 25,
+        marginBottom: 8,
     },
     buttonInProgressStyle1: {
         backgroundColor: "rgba(26,188,156,1)",
@@ -289,7 +314,8 @@ export default styles = StyleSheet.create({
             height: 1
         },
         height: 31,
-        width: 95,
+        width: '30%',
+        flexDirection:'row',
         elevation: 5,
         shadowOpacity: 0.06,
         shadowRadius: 5,
@@ -302,19 +328,21 @@ export default styles = StyleSheet.create({
     buttonInprogressTextStyle: {
         color: '#FFFFFF',
         paddingVertical: 2,
-        paddingHorizontal: 5,
+        textAlign: 'center',
         fontSize: 16,
     },
     buttonRequestTextStyle: {
         color: '#FFFFFF',
         paddingVertical: 2,
-        paddingHorizontal: 15,
+        width: '100%',
+        textAlign: 'center',
         fontSize: 16,
     },
     buttonRequestTextStyle1: {
         color: '#000',
         paddingVertical: 2,
-        paddingHorizontal: 15,
+        width: '100%',
+        textAlign: 'center',
         fontSize: 16,
     },
     buttonCompletedStyle: {
@@ -327,36 +355,59 @@ export default styles = StyleSheet.create({
             height: 1
         },
         height: 28,
-        width: 95,
-        elevation: 5,
-        shadowOpacity: 0.06,
+        width: '45%',
+        elevation: 10,
+        shadowOpacity: 0.3,
         shadowRadius: 5,
         borderRadius: 5,
         marginTop: 18,
-        marginBottom: 25,
+        marginBottom: 8,
+    },
+    buttonCompletedStyle1: {
+        backgroundColor: "rgba(255,255,255,1)",
+        borderWidth: 0.5,
+        borderColor: "rgba(236,240,241,1)",
+        shadowColor: "rgba(0,0,0,1)",
+        shadowOffset: {
+            width: 0,
+            height: 1
+        },
+        height: 28,
+        width: '30%',
+        flexDirection:'row',
+        elevation: 10,
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
+        borderRadius: 5,
+        marginTop: 18,
+        marginBottom: 8,
     },
     buttonCompletedTextStyle: {
         color: '#000',
         paddingVertical: 2,
-        paddingHorizontal: 7,
+        width: '100%',
+        textAlign: 'center',
         fontSize: 16,
     },
     buttonCompletedTextStyle1: {
         color: '#fff',
         paddingVertical: 2,
-        paddingHorizontal: 7,
+        width: '100%',
+        textAlign: 'center',
         fontSize: 16,
     },
     buttonPrayingTextStyle: {
         color: '#000',
         paddingVertical: 2,
-        paddingHorizontal: 20,
+        width: '100%',
+        textAlign: 'center',
         fontSize: 16,
     },
     buttonPrayingTextStyle1: {
         color: '#fff',
         paddingVertical: 2,
-        paddingHorizontal: 20,
+        width: '100%',
+        textAlign: 'center',
         fontSize: 16,
     },
     buttonStyle: {
@@ -370,7 +421,7 @@ export default styles = StyleSheet.create({
         marginLeft: 35,
         marginRight: 35,
         marginTop: 10,
-        marginBottom: 25,
+        marginBottom: 10,
     },
     buttonStyle1: {
         backgroundColor: 'rgba(26,188,156,1)',
@@ -394,7 +445,10 @@ export default styles = StyleSheet.create({
         alignItems: 'center',
         width: '40%',
         borderRadius: 8,        
-        marginBottom: 25,
+        paddingLeft: 30,
+        paddingRight: 30,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     buttonText40Style: {
         //fontFamily: "abeezee-regular",
@@ -473,7 +527,9 @@ export default styles = StyleSheet.create({
     },
     watchTest: {
         color: 'rgba(243,156,18,1)',
-        fontSize: 20,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        fontSize: 16,
         fontWeight:'bold'
     },    
 });

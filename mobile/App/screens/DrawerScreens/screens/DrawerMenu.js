@@ -7,16 +7,20 @@ import styles from '../styles/index';
 
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import AsyncStorage from '@react-native-community/async-storage';
 
 class DrawerScreen extends Component {
-  navigateToScreen = (route) => () => {
+  navigateToScreen = (route) => () => {    
     const navigateAction = NavigationActions.navigate({
       routeName: route
     });
     this.props.navigation.dispatch(navigateAction);
-    this.props.navigation.dispatch(DrawerActions.closeDrawer())
+    this.props.navigation.dispatch(DrawerActions.closeDrawer())    
   }
 
+  logOut = () => {
+      
+  }
   render () {
     return (
       <View style={styles.container}>
@@ -102,7 +106,12 @@ class DrawerScreen extends Component {
                     name="log-out"
                     style={{fontSize: 18, marginRight: 10, color: 'rgba(26,188,156,1)'}}
                   ></EntypoIcon>
-                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={this.navigateToScreen('Logout')}>
+                  <Text style={{color: 'rgba(26,188,156,1)'}} onPress={() => {this.props.navigation.dispatch({
+                    actions: [NavigationActions.navigate({routeName: 'Logout'})],
+                    index: 0,
+                    key: null,
+                    type: 'Navigation/RESET',
+                  });}}>
                   Log out 
                   </Text>
                 </View>

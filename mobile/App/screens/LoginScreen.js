@@ -33,7 +33,7 @@ const LoginScreen = ({navigation}) => {
     if (isLoginSuccess)
       setTimeout(() => {
         navigation.dispatch(StackActions.replace('DrawerNavigationRoutes'));        
-      }, 4000);
+      }, 2000);
   };
 
   const handleCheckBox = () => {
@@ -113,7 +113,7 @@ const LoginScreen = ({navigation}) => {
             fontWeight: 'bold',
             marginBottom: 10,
           }}> 
-            Let's PRAY
+            LET PRAY
           </Text>            
         </FadeInView>  
         <Image

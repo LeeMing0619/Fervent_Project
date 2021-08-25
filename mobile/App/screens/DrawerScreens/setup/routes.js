@@ -94,15 +94,25 @@ const defaultNavigationOptions = ({ navigation }) => ({
             <MenuImage navigation={navigation}/>
         </TouchableOpacity>,
   headerRight:        
-            <MenuRightImage navigation={navigation}/>            
- 
-        
+    <MenuRightImage navigation={navigation}/>,    
 })
 
 const StackNavigator = createStackNavigator({
     DrawerNavigator:{
         screen: DrawerNavigator
-    }
+    },
+    Logout:{
+        screen: Login,
+        navigationOptions: {
+            headerShown: false,
+        },
+    },
+    // Home: {
+    //     screen: Home,
+    //     navigationOptions: {
+    //         headerShown: false,
+    //     },
+    // }
 },{ defaultNavigationOptions });
 
 let Navigation = createAppContainer(StackNavigator);
