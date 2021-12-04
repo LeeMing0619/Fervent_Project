@@ -36,9 +36,10 @@ const RegisterScreen = (props) => {
 
   const [isSelected, setSelection] = useState(false);
 
-  const firstnameInputRef = createRef();
+  const selecGenderRef = createRef();
   const lastnameInputRef = createRef();
   const emailInputRef = createRef();
+  const resetPaswordInputRef = createRef();
 
   const handleCheckBox = () => {
     setSelection(!isSelected);
@@ -147,7 +148,7 @@ const RegisterScreen = (props) => {
               placeholderTextColor="#8b9cb5"
               autoCapitalize="sentences"
               returnKeyType="next"
-              ref={lastnameInputRef}
+              //ref={lastnameInputRef}
               onSubmitEditing={() =>
                 lastnameInputRef.current && lastnameInputRef.current.focus()
               }
@@ -164,7 +165,7 @@ const RegisterScreen = (props) => {
               placeholderTextColor="#8b9cb5"
               autoCapitalize="sentences"
               returnKeyType="next"
-              ref={emailInputRef}
+              ref={lastnameInputRef}
               onSubmitEditing={() =>
                 emailInputRef.current && emailInputRef.current.focus()
               }
@@ -181,7 +182,10 @@ const RegisterScreen = (props) => {
               placeholderTextColor="#8b9cb5"
               keyboardType="email-address"
               ref={emailInputRef}
-              returnKeyType="next"              
+              returnKeyType="next"   
+              onSubmitEditing={() =>
+                selecGenderRef.current && selecGenderRef.current.openDropdown()
+              }
               blurOnSubmit={false}
             />
           </View>
@@ -195,6 +199,7 @@ const RegisterScreen = (props) => {
               dropdownStyle={styles.dropdown1DropdownStyle}
               rowStyle={styles.dropdown1RowStyle}
               rowTextStyle={styles.dropdown1RowTxtStyle}
+              ref={selecGenderRef}
               renderDropdownIcon={() => {
                 return (
                   <Icon name="chevron-down" color={"#444"} size={18} />
@@ -245,7 +250,10 @@ const RegisterScreen = (props) => {
               placeholderTextColor="#8b9cb5"
               secureTextEntry={true}
               keyboardType="sentences"
-              returnKeyType="next"              
+              returnKeyType="next"
+              onSubmitEditing={() =>
+                resetPaswordInputRef.current && resetPaswordInputRef.current.focus()
+              }           
               blurOnSubmit={false}
             />
           </View>
@@ -261,6 +269,7 @@ const RegisterScreen = (props) => {
               autoCapitalize="sentences"
               returnKeyType="next"
               onSubmitEditing={Keyboard.dismiss}
+              ref={resetPaswordInputRef}
               blurOnSubmit={false}
             />
           </View>
